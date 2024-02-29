@@ -4,15 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondoprincipal"
     tools:context=".MainActivity">
 
-    <TextView
+    <View
+        android:id="@+id/ellipse_"
+        android:layout_width="261dp"
+        android:layout_height="260dp"
+        android:alpha="0.40000000596046"
+        android:background="@drawable/ellipse_3_shape"
+        tools:layout_editor_absoluteX="75dp"
+        tools:layout_editor_absoluteY="48dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:srcCompat="@drawable/logo"
+        tools:layout_editor_absoluteX="99dp"
+        tools:layout_editor_absoluteY="73dp" />
 
+    <Button
+        android:id="@+id/bt_1"
+        android:layout_width="147dp"
+        android:layout_height="47dp"
+        android:background="@drawable/boton_redondeado"
+        android:text="Iniciar Sesion"
+        android:textColor="#FFFFFF"
+        tools:layout_editor_absoluteX="132dp"
+        tools:layout_editor_absoluteY="655dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
