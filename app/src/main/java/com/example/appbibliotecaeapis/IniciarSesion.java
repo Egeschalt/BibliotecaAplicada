@@ -20,4 +20,10 @@ public class IniciarSesion extends AppCompatActivity {
         startActivity(intent);
     }
 
+
+    public void PantallaBienvenido(View view){
+        Context context=view.getContext();
+        Intent intent=new Intent(context, Bienvenido.class);
+        startActivity(intent);
+    }
 }
