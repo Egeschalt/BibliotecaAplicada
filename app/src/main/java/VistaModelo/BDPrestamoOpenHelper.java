@@ -14,6 +14,13 @@ public class BDPrestamoOpenHelper extends SQLiteOpenHelper {
             "Carrera VARCHAR(40) NOT NULL," +
             "Correo VARCHAR(40) NOT NULL," +
             "Teléfono VARCHAR(9) NOT NULL," +
+            "imagen BYTE)";
+
+    String tabla_bibliotecario = "CREATE TABLE Bibliotecario(" +
+            "IdBibliotecario INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
+            "Nombre VARCHAR(40) NOT NULL UNIQUE," +
+            "Apellidos VARCHAR(40) NOT NULL," +
+            "Teléfono VARCHAR(9) NOT NULL," +
             "descripcion TEXT," +
             "imagen BYTE)";
 
