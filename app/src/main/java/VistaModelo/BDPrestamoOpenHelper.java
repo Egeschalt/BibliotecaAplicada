@@ -35,7 +35,9 @@ public class BDPrestamoOpenHelper extends SQLiteOpenHelper {
             "Idioma VARCHAR(20) NOT NULL," +
             "Fecha de publicación VARCHAR(20) NOT NULL," +
             "Disponibilidad BOOLEAN NOT NULL," +
-            "Imagen BYTE)";
+            "imagen BYTE)";
+    String tabla_prestamo = "CREATE TABLE Prestamo(";
+
 
     public BDPrestamoOpenHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
