@@ -7,5 +7,17 @@
 		<item name="colorPrimaryDark">@color/colorPrimaryDark</item>
 		<item name="colorAccent">@color/colorAccent</item>
 	</style>
+=======
+	<!-- Estilo para el texto del Spinner -->
+	<style name="SpinnerTextStyle">
+		<item name="android:textColor">@color/white</item> <!-- Cambia este valor a tu color deseado (negro) -->
+		<item name="android:textSize">25sp</item> <!-- Cambia este valor al tamaño deseado (25sp) -->
+	</style>
+
+	<!-- Estilo del Spinner -->
+	<style name="SpinnerTheme" parent="Widget.AppCompat.Spinner">
+		<item name="android:textAppearance">@style/SpinnerTextStyle</item>
+	</style>
+>>>>>>> origin/Egeschalt
 
 </resources>
