@@ -23,6 +23,12 @@ public class VMLibro {
     }
 
     private void InsertarLibrosCargados() {
+        //  Estudiante est1=new Estudiante("01","Maycol","Varas","72346482","Ingeniería de Sistemas","jvaras","a",);
+        // Estudiante est2=new Estudiante("02","Diego");
+//        Estudiante est3=new Estudiante("03","Jhosmer");
+//        Estudiante est4=new Estudiante("04","Hans");
+//        Estudiante est5=new Estudiante("05","Ever");
+//        AgregarEstudiante(est1);
 
     }
 
