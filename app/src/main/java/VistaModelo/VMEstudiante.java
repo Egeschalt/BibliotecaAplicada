@@ -41,6 +41,11 @@ public class VMEstudiante {
             ContentValues oRegistro = new ContentValues();
             oRegistro.put("IdEstudiante", estudiante.getCodEstudiante());
             oRegistro.put("nombreEstudiante", estudiante.getNombre());
+            oRegistro.put("nombreEstudiante", estudiante.getApellidos());
+            oRegistro.put("nombreEstudiante", estudiante.getCarrera());
+            oRegistro.put("nombreEstudiante", estudiante.getCorreo());
+            oRegistro.put("nombreEstudiante", estudiante.getTelefono());
+
             long fila = oBD.insert("Estudiante", null, oRegistro);
             Log.d("valor de fila", String.valueOf(fila));
             if (fila > 1) {

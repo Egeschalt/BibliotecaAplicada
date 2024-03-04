@@ -34,6 +34,11 @@ public class VMBibliotecario {
             ContentValues oRegistro = new ContentValues();
             oRegistro.put("IdBibliotecario", bibliotecario.getIdBibliotecario());
             oRegistro.put("nombreBibliotecario", bibliotecario.getNombre());
+            oRegistro.put("apellidosBibliotecario", bibliotecario.getApellidos());
+            oRegistro.put("nombreBibliotecario", bibliotecario.getNombre());
+            oRegistro.put("telefonoBibliotecario", bibliotecario.getTelefono());
+            oRegistro.put("fotoBibliotecario", bibliotecario.getFotoBibliotecario());
+
             long fila = oBD.insert("Bibliotecario", null, oRegistro);
             Log.d("valor de fila", String.valueOf(fila));
             if (fila > 1) {
