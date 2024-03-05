@@ -5,12 +5,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
-import java.util.Date;
-
-import Model.Bibliotecario;
-import Model.Estudiante;
-import Model.Libro;
-
 public class BDPrestamoOpenHelper extends SQLiteOpenHelper {
     String tabla_estudiante = "CREATE TABLE Estudiante(" +
             "IdEstudiante INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
@@ -47,9 +41,9 @@ public class BDPrestamoOpenHelper extends SQLiteOpenHelper {
             "FechaDePréstamo VARCHAR(20) NOT NULL," +
             "FechaDeDevolución VARCHAR(20) NOT NULL," +
             "FechaDeVencimiento VARCHAR(20) NOT NULL," +
-            "FOREIGN KEY(IdLibro) REFERENCES NombreTablaLibro(NombreColumnaIdLibro)," +
-            "FOREIGN KEY(IdEstudiante) REFERENCES NombreTablaEstudiante(NombreColumnaIdEstudiante)," +
-            "FOREIGN KEY(IdBibliotecario) REFERENCES NombreTablaBibliotecario(NombreColumnaIdBibliotecario)" +
+            "FOREIGN KEY(IdLibro) REFERENCES Libro(IdLibro)," +
+            "FOREIGN KEY(IdEstudiante) REFERENCES Estudiante(IdEstudiante)," +
+            "FOREIGN KEY(IdBibliotecario) REFERENCES Bibliotecario(IdBibliotecario)" +
             ");";
 
     public BDPrestamoOpenHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
