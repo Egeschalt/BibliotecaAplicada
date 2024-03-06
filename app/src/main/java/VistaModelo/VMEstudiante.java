@@ -44,6 +44,8 @@ public class VMEstudiante {
             oRegistro.put("nombreEstudiante", estudiante.getApellidos());
             oRegistro.put("nombreEstudiante", estudiante.getCarrera());
             oRegistro.put("nombreEstudiante", estudiante.getCorreo());
+            oRegistro.put("nombreEstudiante", estudiante.getUsuario());
+            oRegistro.put("nombreEstudiante", estudiante.getContrasena());
             oRegistro.put("nombreEstudiante", estudiante.getTelefono());
 
             long fila = oBD.insert("Estudiante", null, oRegistro);
