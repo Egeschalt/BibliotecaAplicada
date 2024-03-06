@@ -31,7 +31,11 @@ public class Estudiante implements Parcelable {
         this.telefono = telefono;
         this.fotoEstudiante = fotoEstudiante;
     }
-
+    public Estudiante(String usuario, String correo, String contrasena) {
+        this.correo = correo;
+        this.usuario = usuario;
+        this.contrasena = contrasena;
+    }
     protected Estudiante(Parcel in) {
         codEstudiante = in.readString();
         nombre = in.readString();

@@ -23,7 +23,7 @@ public class VMEstudiante {
         InsertarEstudiantes();
     }
 
-    private void InsertarEstudiantes(){
+    public void InsertarEstudiantes(){
       //  Estudiante est1=new Estudiante("01","Maycol","Varas","72346482","Ingeniería de Sistemas","jvaras","a",);
        // Estudiante est2=new Estudiante("02","Diego");
 //        Estudiante est3=new Estudiante("03","Jhosmer");
@@ -33,7 +33,7 @@ public class VMEstudiante {
 
 
     }
-    private boolean AgregarEstudiante(Estudiante estudiante) {
+    public boolean AgregarEstudiante(Activity oActivity,Estudiante estudiante) {
         boolean rpta = false;
         BDPrestamoOpenHelper bdEstudiantesOpenHelper = new BDPrestamoOpenHelper(oActivity, nombreBD, null, version);
         SQLiteDatabase oBD = bdEstudiantesOpenHelper.getWritableDatabase();

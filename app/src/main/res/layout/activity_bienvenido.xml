@@ -48,18 +48,18 @@
           android:textAlignment="center"
           android:textAppearance="@style/TextAppearance.AppCompat.Large"
           android:textColor="@color/white"
-          android:textSize="48sp" />
+          android:textSize="40dp" />
 
       <TextView
           android:id="@+id/tv_usuario6"
           android:layout_width="match_parent"
-          android:layout_height="wrap_content"
+          android:layout_height="64dp"
           android:fontFamily="@font/josefin_sans_light"
           android:text="[Usuario]"
           android:textAlignment="center"
           android:textAppearance="@style/TextAppearance.AppCompat.Large"
           android:textColor="@color/white"
-          android:textSize="45sp"/>
+          android:textSize="37dp" />
 
       <ImageView
           android:id="@+id/imageView3"
