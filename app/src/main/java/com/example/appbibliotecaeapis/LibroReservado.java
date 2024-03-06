@@ -11,4 +11,7 @@ public class LibroReservado extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_libro_reservado);
     }
+
+    public void prueba(){
+    }
 }
