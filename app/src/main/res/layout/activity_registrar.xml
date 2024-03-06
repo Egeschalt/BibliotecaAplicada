@@ -93,7 +93,7 @@
                     tools:layout_editor_absoluteY="0dp">
 
                     <TextView
-                        android:id="@+id/textView11"
+                        android:id="@+id/tv_iniciaSesion"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="5dp"
@@ -106,7 +106,7 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/textView12"
-                        app:layout_constraintTop_toBottomOf="@+id/bt_"
+                        app:layout_constraintTop_toBottomOf="@+id/bt_registro"
                         tools:ignore="TouchTargetSizeCheck" />
 
                     <TextView
@@ -118,23 +118,23 @@
                         android:text="¿Ya tienes cuenta?"
                         android:textColor="@color/black"
                         android:textSize="16sp"
-                        app:layout_constraintEnd_toStartOf="@+id/textView11"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_iniciaSesion"
                         app:layout_constraintHorizontal_chainStyle="packed"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/bt_" />
+                        app:layout_constraintTop_toBottomOf="@+id/bt_registro" />
 
                     <ImageButton
-                        android:id="@+id/bt_"
+                        android:id="@+id/bt_registro"
                         android:layout_width="223dp"
                         android:layout_height="0dp"
                         android:layout_marginBottom="5dp"
                         android:background="@drawable/borderedondeado"
                         android:text="Iniciar Sesion"
                         android:textColor="#FFFFFF"
-                        app:layout_constraintBottom_toTopOf="@+id/textView11"
+                        app:layout_constraintBottom_toTopOf="@+id/tv_iniciaSesion"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/editTextText2"
+                        app:layout_constraintTop_toBottomOf="@+id/et_contrasena"
                         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
                     <TextView
@@ -146,7 +146,7 @@
                         android:textColor="@color/white"
                         android:textSize="20sp"
                         android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="@+id/bt_"
+                        app:layout_constraintBottom_toBottomOf="@+id/bt_registro"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent" />
 
@@ -165,14 +165,14 @@
                         android:textSize="14sp"
                         android:textStyle="bold"
                         app:autoSizeTextType="uniform"
-                        app:layout_constraintBottom_toTopOf="@+id/editTextText"
+                        app:layout_constraintBottom_toTopOf="@+id/et_usuario"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         tools:ignore="MissingConstraints" />
 
                     <EditText
-                        android:id="@+id/editTextText"
+                        android:id="@+id/et_usuario"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="22dp"
@@ -180,13 +180,13 @@
                         android:inputType="text"
                         android:text="Usuario"
                         android:textSize="25sp"
-                        app:layout_constraintBottom_toTopOf="@+id/editTextText3"
+                        app:layout_constraintBottom_toTopOf="@+id/et_email"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
                     <EditText
-                        android:id="@+id/editTextText2"
+                        android:id="@+id/et_contrasena"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="55dp"
@@ -194,12 +194,12 @@
                         android:inputType="text"
                         android:text="Contraseña"
                         android:textSize="25sp"
-                        app:layout_constraintBottom_toTopOf="@+id/bt_"
-                        app:layout_constraintStart_toStartOf="@+id/editTextText3"
-                        app:layout_constraintTop_toBottomOf="@+id/editTextText3" />
+                        app:layout_constraintBottom_toTopOf="@+id/bt_registro"
+                        app:layout_constraintStart_toStartOf="@+id/et_email"
+                        app:layout_constraintTop_toBottomOf="@+id/et_email" />
 
                     <EditText
-                        android:id="@+id/editTextText3"
+                        android:id="@+id/et_email"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="17dp"
@@ -207,9 +207,9 @@
                         android:inputType="text"
                         android:text="Email"
                         android:textSize="25sp"
-                        app:layout_constraintBottom_toTopOf="@+id/editTextText2"
-                        app:layout_constraintStart_toStartOf="@+id/editTextText"
-                        app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+                        app:layout_constraintBottom_toTopOf="@+id/et_contrasena"
+                        app:layout_constraintStart_toStartOf="@+id/et_usuario"
+                        app:layout_constraintTop_toBottomOf="@+id/et_usuario" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>

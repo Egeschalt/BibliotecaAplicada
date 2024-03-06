@@ -77,7 +77,7 @@
         android:layout_height="431dp">
 
         <EditText
-            android:id="@+id/editTextText"
+            android:id="@+id/et_usuario"
             android:layout_width="271dp"
             android:layout_height="58dp"
             android:ems="10"
@@ -92,7 +92,7 @@
             app:layout_constraintVertical_bias="0.7" />
 
         <EditText
-            android:id="@+id/editTextText2"
+            android:id="@+id/et_contrasena"
             android:layout_width="279dp"
             android:layout_height="53dp"
             android:layout_marginTop="8dp"
@@ -144,7 +144,7 @@
             android:text="Usuario"
             android:textColor="@color/white"
             android:textSize="25sp"
-            app:layout_constraintBottom_toTopOf="@+id/editTextText"
+            app:layout_constraintBottom_toTopOf="@+id/et_usuario"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.215"
             app:layout_constraintStart_toStartOf="parent"
