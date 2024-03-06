@@ -14,16 +14,18 @@ public class Estudiante implements Parcelable {
     String dni;
     String carrera;
     String correo;
+    String contrasena;
     String telefono;
     byte[] fotoEstudiante;
 
-    public Estudiante(String codEstudiante, String nombre, String apellidos, String dni, String carrera, String correo, String telefono, byte[] fotoEstudiante) {
+    public Estudiante(String codEstudiante, String nombre, String apellidos, String dni, String carrera, String correo, String contrasena, String telefono, byte[] fotoEstudiante) {
         this.codEstudiante = codEstudiante;
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.dni = dni;
         this.carrera = carrera;
         this.correo = correo;
+        this.contrasena = contrasena;
         this.telefono = telefono;
         this.fotoEstudiante = fotoEstudiante;
     }
@@ -35,6 +37,7 @@ public class Estudiante implements Parcelable {
         dni = in.readString();
         carrera = in.readString();
         correo = in.readString();
+        contrasena = in.readString();
         telefono = in.readString();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             fotoEstudiante = in.readBlob();
@@ -49,6 +52,7 @@ public class Estudiante implements Parcelable {
         dest.writeString(dni);
         dest.writeString(carrera);
         dest.writeString(correo);
+        dest.writeString(contrasena);
         dest.writeString(telefono);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             dest.writeBlob(fotoEstudiante);
@@ -118,6 +122,12 @@ public class Estudiante implements Parcelable {
 
     public void setCorreo(String correo) {
         this.correo = correo;
+    }
+
+    public String getContraseña() { return contrasena; }
+
+    public void setContraseña(String contraseña) {
+        this.contrasena = contraseña;
     }
 
     public String getTelefono() {
