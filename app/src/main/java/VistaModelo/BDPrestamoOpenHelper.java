@@ -55,6 +55,7 @@ public class BDPrestamoOpenHelper extends SQLiteOpenHelper {
         db.execSQL(tabla_bibliotecario);
         db.execSQL(tabla_libro);
         db.execSQL(tabla_prestamo);
+        enableForeignKeys(db);
     }
 
     @Override
@@ -64,5 +65,10 @@ public class BDPrestamoOpenHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS Libro");
         db.execSQL("DROP TABLE IF EXISTS Prestamo");
         onCreate(db);
+    }
+
+    private void enableForeignKeys(SQLiteDatabase db) {
+        db.execSQL("PRAGMA foreign_keys=ON");
+        System.out.println("PRAGMA maybe ok");
     }
 }
