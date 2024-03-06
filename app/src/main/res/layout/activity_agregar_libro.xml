@@ -53,7 +53,7 @@
         android:text="Imagen"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView" />
+        app:layout_constraintTop_toBottomOf="@+id/cv_fecha" />
 
     <EditText
         android:id="@+id/et_generoAgregar"
@@ -203,7 +203,7 @@
         app:layout_constraintTop_toBottomOf="@+id/et_tituloAgregar" />
 
     <CalendarView
-        android:id="@+id/calendarView"
+        android:id="@+id/cv_fecha"
         android:layout_width="319dp"
         android:layout_height="60dp"
         android:layout_marginStart="50dp"
@@ -211,7 +211,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView25" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/ib_buscar"
         android:layout_width="50dp"
         android:layout_height="60dp"
         android:layout_marginStart="100dp"
@@ -223,17 +223,17 @@
         tools:srcCompat="@drawable/buscar_icono" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/imv_libro"
         android:layout_width="50dp"
         android:layout_height="60dp"
-        android:layout_marginEnd="100dp"
+        android:layout_marginEnd="104dp"
         android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView26"
         app:srcCompat="@drawable/rectangle_9" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_agregar"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -244,6 +244,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton" />
+        app:layout_constraintTop_toBottomOf="@+id/ib_buscar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -26,7 +26,7 @@ public class VMLibro {
 
     }
 
-    private boolean AgregarLinbro(Libro libro) {
+    public boolean AgregarLibro(Activity oActivity, Libro libro) {
         boolean rpta = false;
         BDPrestamoOpenHelper bdLibroOpenHelper = new BDPrestamoOpenHelper(oActivity, nombreBD, null, version);
         SQLiteDatabase oBD = bdLibroOpenHelper.getWritableDatabase();
