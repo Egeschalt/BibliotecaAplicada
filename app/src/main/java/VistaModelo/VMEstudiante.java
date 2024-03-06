@@ -41,12 +41,12 @@ public class VMEstudiante {
             ContentValues oRegistro = new ContentValues();
             oRegistro.put("IdEstudiante", estudiante.getCodEstudiante());
             oRegistro.put("nombreEstudiante", estudiante.getNombre());
-            oRegistro.put("nombreEstudiante", estudiante.getApellidos());
-            oRegistro.put("nombreEstudiante", estudiante.getCarrera());
-            oRegistro.put("nombreEstudiante", estudiante.getCorreo());
-            oRegistro.put("nombreEstudiante", estudiante.getUsuario());
-            oRegistro.put("nombreEstudiante", estudiante.getContrasena());
-            oRegistro.put("nombreEstudiante", estudiante.getTelefono());
+            oRegistro.put("apellidosEstudiante", estudiante.getApellidos());
+            oRegistro.put("carreraEstudiante", estudiante.getCarrera());
+            oRegistro.put("correoEstudiante", estudiante.getCorreo());
+            oRegistro.put("usuarioEstudiante", estudiante.getUsuario());
+            oRegistro.put("contasenaEstudiante", estudiante.getContrasena());
+            oRegistro.put("telefonoEstudiante", estudiante.getTelefono());
 
             long fila = oBD.insert("Estudiante", null, oRegistro);
             Log.d("valor de fila", String.valueOf(fila));

@@ -35,8 +35,10 @@ public class VMBibliotecario {
             oRegistro.put("IdBibliotecario", bibliotecario.getIdBibliotecario());
             oRegistro.put("nombreBibliotecario", bibliotecario.getNombre());
             oRegistro.put("apellidosBibliotecario", bibliotecario.getApellidos());
-            oRegistro.put("nombreBibliotecario", bibliotecario.getNombre());
             oRegistro.put("telefonoBibliotecario", bibliotecario.getTelefono());
+            oRegistro.put("correoBibliotecario", bibliotecario.getCorreo());
+            oRegistro.put("usuarioBibliotecario", bibliotecario.getUsuario());
+            oRegistro.put("contasenaBibliotecario", bibliotecario.getContrasena());
             oRegistro.put("fotoBibliotecario", bibliotecario.getFotoBibliotecario());
 
             long fila = oBD.insert("Bibliotecario", null, oRegistro);
