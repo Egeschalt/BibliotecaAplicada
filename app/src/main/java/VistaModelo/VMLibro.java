@@ -14,12 +14,11 @@ public class VMLibro {
     String nombreBD;
     Activity oActivity;
     int version;
-    public VMLibro(Activity oActivity) {
-        listaLibros =new ArrayList<>();
-        nombreBD="BDPlato";
+    public VMLibro() {
+        this.listaLibros =new ArrayList<Libro>();
+        nombreBD="BDBiblioteca";
         version=1;
-        this.oActivity=oActivity;
-        InsertarLibrosCargados();
+
     }
 
     private void InsertarLibrosCargados() {
@@ -28,27 +27,41 @@ public class VMLibro {
 
     public boolean AgregarLibro(Activity oActivity, Libro libro) {
         boolean rpta = false;
-        BDPrestamoOpenHelper bdLibroOpenHelper = new BDPrestamoOpenHelper(oActivity, nombreBD, null, version);
-        SQLiteDatabase oBD = bdLibroOpenHelper.getWritableDatabase();
-        if (oBD != null) {
-            ContentValues oRegistro = new ContentValues();
-            oRegistro.put("idLibro", libro.getIdLibro());
-            oRegistro.put("titulo", libro.getTitulo());
-            oRegistro.put("autor", libro.getAutor());
-            oRegistro.put("editorial", libro.getEditorial());
-            oRegistro.put("genero", libro.getGenero());
-            oRegistro.put("idioma", libro.getIdioma());
-            oRegistro.put("fechaPublicacion", libro.getFechaPublicacion().getTime());
-            oRegistro.put("disponibilidad", libro.isDisponibilidad());
-            oRegistro.put("imglibro", libro.getImgLibro());
+        BDPrestamoOpenHelper openHelper = new BDPrestamoOpenHelper(oActivity, nombreBD, null, version);
+        SQLiteDatabase oBD = null;
 
-            long fila = oBD.insert("Libro", null, oRegistro);
-            Log.d("valor de fila", String.valueOf(fila));
-            if (fila > 1) {
-                rpta = true;
+        try {
+            oBD = openHelper.getWritableDatabase();
+
+            if (oBD != null) {
+
+                ContentValues oRegistro = new ContentValues();
+
+                oRegistro.put("titulo", libro.getTitulo());
+                oRegistro.put("autor", libro.getAutor());
+                oRegistro.put("editorial", libro.getEditorial());
+                oRegistro.put("genero", libro.getGenero());
+                oRegistro.put("idioma", libro.getIdioma());
+                oRegistro.put("FechaDePublicación", libro.getFechaPublicacion());
+                oRegistro.put("disponibilidad", libro.isDisponibilidad());
+                oRegistro.put("fotoLibro", libro.getImgLibro());
+
+                long fila = oBD.insert("Libro", null, oRegistro);
+                Log.d("valor de fila", String.valueOf(fila));
+
+
+                if (fila > 0) {
+                    rpta = true;
+                }
+            }
+        } catch (Exception e) {
+            // Manejar la excepción adecuadamente (por ejemplo, loggearla)
+        } finally {
+            if (oBD != null) {
                 oBD.close();
             }
         }
+
         return rpta;
     }
 

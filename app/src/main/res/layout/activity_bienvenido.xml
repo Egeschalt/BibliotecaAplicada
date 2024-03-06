@@ -244,14 +244,14 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageView12"
+        app:layout_constraintEnd_toStartOf="@+id/reservaBienvenido"
         app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/vector_ek2" />
 
     <ImageView
-        android:id="@+id/imageView12"
+        android:id="@+id/reservaBienvenido"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -267,7 +267,7 @@
         android:layout_marginEnd="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView12"
+        app:layout_constraintStart_toEndOf="@+id/reservaBienvenido"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/vector" />
   </androidx.constraintlayout.widget.ConstraintLayout>
