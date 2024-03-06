@@ -25,13 +25,13 @@ public class BDPrestamoOpenHelper extends SQLiteOpenHelper {
 
     String tabla_libro = "CREATE TABLE Libro(" +
             "IdLibro INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
-            "Título VARCHAR(40) NOT NULL UNIQUE," +
-            "Autor VARCHAR(40) NOT NULL," +
-            "Editorial VARCHAR(40) NOT NULL," +
-            "Género VARCHAR(20) NOT NULL," +
-            "Idioma VARCHAR(20) NOT NULL," +
+            "titulo VARCHAR(40) NOT NULL UNIQUE," +
+            "autor VARCHAR(40) NOT NULL," +
+            "editorial VARCHAR(40) NOT NULL," +
+            "genero VARCHAR(20) NOT NULL," +
+            "idioma VARCHAR(20) NOT NULL," +
             "FechaDePublicación VARCHAR(20) NOT NULL," +
-            "Disponibilidad BOOLEAN NOT NULL," +
+            "disponibilidad BOOLEAN NOT NULL," +
             "fotoLibro BYTE)";
     String tabla_prestamo = "CREATE TABLE Prestamo(" +
             "IdPrestamo INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +

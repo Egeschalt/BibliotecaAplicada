@@ -16,7 +16,9 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.io.ByteArrayOutputStream;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 import Model.Libro;
 import VistaModelo.VMLibro;
@@ -45,6 +47,7 @@ public class AgregarLibroActivity extends AppCompatActivity {
         ivlibro= findViewById(R.id.imv_libro);
         cvfecha= findViewById(R.id.cv_fecha);
         ibbuscar = findViewById(R.id.ib_buscar);
+        btnagregar = findViewById(R.id.btn_agregar);
 
         ivlibro.setOnClickListener(v -> {
             cargarImagen();
@@ -70,13 +73,17 @@ public class AgregarLibroActivity extends AppCompatActivity {
         String editorial =eteditorial.getText().toString();
         String genero =etgenero.getText().toString();
         String idioma =etidioma.getText().toString();
+
+
         long fechaMillis = cvfecha.getDate();
         Date fechaPublicacion = new Date(fechaMillis);
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault());
+            String fechaFormateada = sdf.format(fechaPublicacion);
 
         boolean disponible = true;
 
-        Libro olibro = new Libro("1",titulo,autor,editorial,genero,idioma,fechaPublicacion,disponible,imagen);
-        vmLibro = new VMLibro(this);
+        Libro olibro = new Libro(titulo,autor,editorial,genero,idioma, fechaFormateada,disponible,imagen);
+        vmLibro = new VMLibro();
         if(vmLibro.AgregarLibro(this,olibro)){
             Toast.makeText(this,"Libro Agregado Correctamente",Toast.LENGTH_SHORT).show();
         }

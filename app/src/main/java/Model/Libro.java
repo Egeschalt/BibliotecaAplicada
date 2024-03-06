@@ -9,18 +9,17 @@ import androidx.annotation.NonNull;
 import java.util.Date;
 
 public class Libro implements Parcelable {
-    String idLibro;
+
     String titulo;
     String autor;
     String editorial;
     String genero;
     String idioma;
-    Date fechaPublicacion;
+    String fechaPublicacion;
     boolean disponibilidad;
     byte[] imgLibro;
 
-    public Libro(String idLibro, String titulo, String autor, String editorial, String genero, String idioma, Date fechaPublicacion, boolean disponibilidad, byte[] imgLibro) {
-        this.idLibro = idLibro;
+    public Libro( String titulo, String autor, String editorial, String genero, String idioma, String fechaPublicacion, boolean disponibilidad, byte[] imgLibro) {
         this.titulo = titulo;
         this.autor = autor;
         this.editorial = editorial;
@@ -32,7 +31,7 @@ public class Libro implements Parcelable {
     }
 
     protected Libro(Parcel in) {
-        idLibro = in.readString();
+
         titulo = in.readString();
         autor = in.readString();
         editorial = in.readString();
@@ -56,13 +55,7 @@ public class Libro implements Parcelable {
         }
     };
 
-    public String getIdLibro() {
-        return idLibro;
-    }
 
-    public void setIdLibro(String idLibro) {
-        this.idLibro = idLibro;
-    }
 
     public String getTitulo() {
         return titulo;
@@ -104,11 +97,11 @@ public class Libro implements Parcelable {
         this.idioma = idioma;
     }
 
-    public Date getFechaPublicacion() {
+    public String getFechaPublicacion() {
         return fechaPublicacion;
     }
 
-    public void setFechaPublicacion(Date fechaPublicacion) {
+    public void setFechaPublicacion(String fechaPublicacion) {
         this.fechaPublicacion = fechaPublicacion;
     }
 
@@ -135,7 +128,7 @@ public class Libro implements Parcelable {
 
     @Override
     public void writeToParcel(@NonNull Parcel parcel, int i) {
-        parcel.writeString(idLibro);
+
         parcel.writeString(titulo);
         parcel.writeString(autor);
         parcel.writeString(editorial);

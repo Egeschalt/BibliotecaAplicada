@@ -34,7 +34,7 @@ public class VMPrestamo {
         if (oBD != null) {
             ContentValues oRegistro = new ContentValues();
             oRegistro.put("IdPrestamo", prestamo.getIdPrestamo());
-            oRegistro.put("idLibro", prestamo.getIdLibro().getIdLibro());
+
             oRegistro.put("IdEstudiante", prestamo.getIdEstudiante().getCodEstudiante());
             oRegistro.put("IdBibliotecario", prestamo.getIdBibliotecario().getIdBibliotecario());
             oRegistro.put("FechaPrestamo", prestamo.getFechaPrestamo().getTime());
