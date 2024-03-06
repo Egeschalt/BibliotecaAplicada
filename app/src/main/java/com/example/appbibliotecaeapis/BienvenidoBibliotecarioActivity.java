@@ -31,12 +31,12 @@ public class BienvenidoBibliotecarioActivity extends AppCompatActivity {
             llevarListar();
         });
         ibgeliminar.setOnClickListener(v -> {
-            llevarEliminar();
+            llevaEliminar();
         });
 
     }
 
-    private void llevarEliminar() {
+    private void llevaEliminar() {
     }
 
     private void llevarListar() {
