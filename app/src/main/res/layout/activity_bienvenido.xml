@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_gradient"
     android:baselineAligned="false"
-    android:orientation="vertical"
-    tools:context=".DevolverLibro">
+    android:orientation="vertical">
 
   <androidx.constraintlayout.widget.ConstraintLayout
       android:layout_width="match_parent"
@@ -48,18 +48,18 @@
           android:textAlignment="center"
           android:textAppearance="@style/TextAppearance.AppCompat.Large"
           android:textColor="@color/white"
-          android:textSize="40dp" />
+          android:textSize="48sp" />
 
       <TextView
           android:id="@+id/tv_usuario6"
           android:layout_width="match_parent"
-          android:layout_height="64dp"
+          android:layout_height="wrap_content"
           android:fontFamily="@font/josefin_sans_light"
           android:text="[Usuario]"
           android:textAlignment="center"
           android:textAppearance="@style/TextAppearance.AppCompat.Large"
           android:textColor="@color/white"
-          android:textSize="37dp" />
+          android:textSize="45sp"/>
 
       <ImageView
           android:id="@+id/imageView3"
@@ -88,8 +88,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView18"
@@ -126,22 +125,18 @@
           android:id="@+id/imageView22"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          app:srcCompat="@drawable/rectangle_10"
-          tools:layout_editor_absoluteX="36dp"
-          tools:layout_editor_absoluteY="468dp" />
+          app:srcCompat="@drawable/rectangle_10" />
 
       <TextView
           android:id="@+id/tv_usuario11"
           android:layout_width="match_parent"
-          android:layout_height="30dp"
+          android:layout_height="wrap_content"
           android:fontFamily="@font/josefin_sans_light"
           android:text="Libro 1"
           android:textAlignment="center"
           android:textAppearance="@style/TextAppearance.AppCompat.Large"
           android:textColor="@color/white"
-          android:textSize="18sp"
-          tools:layout_editor_absoluteX="36dp"
-          tools:layout_editor_absoluteY="601dp" />
+          android:textSize="18sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -153,85 +148,44 @@
           android:id="@+id/imageView23"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          app:srcCompat="@drawable/rectangle_8"
-          tools:layout_editor_absoluteX="164dp"
-          tools:layout_editor_absoluteY="469dp" />
+          app:srcCompat="@drawable/rectangle_8" />
 
       <TextView
           android:id="@+id/tv_usuario12"
           android:layout_width="match_parent"
-          android:layout_height="30dp"
+          android:layout_height="wrap_content"
           android:text="Libro 2"
           android:fontFamily="@font/josefin_sans_light"
           android:textAlignment="center"
           android:textAppearance="@style/TextAppearance.AppCompat.Large"
           android:textColor="@color/white"
-          android:textSize="18sp"
-          tools:layout_editor_absoluteX="164dp"
-          tools:layout_editor_absoluteY="600dp" />
+          android:textSize="18sp" />
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
+        android:layout_weight="1"
         android:orientation="vertical">
 
       <ImageView
           android:id="@+id/imageView24"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          app:srcCompat="@drawable/rectangle_9"
-          tools:layout_editor_absoluteX="294dp"
-          tools:layout_editor_absoluteY="467dp" />
+          app:srcCompat="@drawable/rectangle_9" />
 
       <TextView
           android:id="@+id/tv_usuario13"
           android:layout_width="match_parent"
-          android:layout_height="30dp"
+          android:layout_height="wrap_content"
           android:fontFamily="@font/josefin_sans_light"
           android:text="Libro 3"
           android:textAlignment="center"
           android:textAppearance="@style/TextAppearance.AppCompat.Large"
           android:textColor="@color/white"
-          android:textSize="18sp"
-          tools:layout_editor_absoluteX="295dp"
-          tools:layout_editor_absoluteY="599dp" />
+          android:textSize="18sp" />
     </LinearLayout>
   </LinearLayout>
-
-  <androidx.constraintlayout.widget.ConstraintLayout
-      android:layout_width="match_parent"
-      android:layout_height="88dp">
-
-    <ImageButton
-        android:id="@+id/bt_3"
-        android:layout_width="233dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/borderedondeado"
-        android:text="Ver libros reservados"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/josefin_sans"
-        android:text="Ver libros reservados"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/bt_3"
-        app:layout_constraintEnd_toEndOf="@+id/bt_3"
-        app:layout_constraintStart_toStartOf="@+id/bt_3"
-        app:layout_constraintTop_toTopOf="@+id/bt_3"
-        tools:ignore="TouchTargetSizeCheck" />
-
-  </androidx.constraintlayout.widget.ConstraintLayout>
 
   <androidx.constraintlayout.widget.ConstraintLayout
       android:layout_width="match_parent"
@@ -271,5 +225,4 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/vector" />
   </androidx.constraintlayout.widget.ConstraintLayout>
-
 </LinearLayout>
