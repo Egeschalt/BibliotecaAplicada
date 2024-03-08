@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo_libro"
-    tools:context=".AgregarLibroActivity">
+    android:background="@drawable/fondotercero"
+    tools:context=".ModificarLibro1_2_Activity">
 
     <EditText
-        android:id="@+id/et_idiomaAgregar"
+        android:id="@+id/et_idiomaModificarP2"
         android:layout_width="317dp"
         android:layout_height="48dp"
         android:layout_marginStart="50dp"
@@ -18,12 +18,12 @@
         android:hint="Ingrese idioma del libro"
         android:inputType="text"
         android:textColor="@color/white"
-        android:textColorHint="#FFBDBDBD"
+        android:textColorHint="#BDBDBD"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView24" />
+        app:layout_constraintTop_toBottomOf="@+id/textView43" />
 
     <TextView
-        android:id="@+id/textView24"
+        android:id="@+id/textView43"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
@@ -31,32 +31,10 @@
         android:text="Idioma"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_generoAgregar" />
-
-    <TextView
-        android:id="@+id/textView25"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:fontFamily="@font/inter"
-        android:text="Fecha de publicación"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_idiomaAgregar" />
-
-    <TextView
-        android:id="@+id/textView26"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:fontFamily="@font/inter"
-        android:text="Imagen"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cv_fecha" />
+        app:layout_constraintTop_toBottomOf="@+id/et_generoModificarP2" />
 
     <EditText
-        android:id="@+id/et_generoAgregar"
+        android:id="@+id/et_generoModificarP2"
         android:layout_width="317dp"
         android:layout_height="48dp"
         android:layout_marginStart="50dp"
@@ -66,12 +44,12 @@
         android:hint="Ingrese genero del libro"
         android:inputType="text"
         android:textColor="@color/white"
-        android:textColorHint="#FFBDBDBD"
+        android:textColorHint="#BDBDBD"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView23" />
+        app:layout_constraintTop_toBottomOf="@+id/textView42" />
 
     <TextView
-        android:id="@+id/textView23"
+        android:id="@+id/textView42"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
@@ -79,10 +57,10 @@
         android:text="Genero"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_editorialAgregar" />
+        app:layout_constraintTop_toBottomOf="@+id/et_editorialModificarP2" />
 
     <EditText
-        android:id="@+id/et_editorialAgregar"
+        android:id="@+id/et_editorialModificarP2"
         android:layout_width="317dp"
         android:layout_height="48dp"
         android:layout_marginStart="50dp"
@@ -92,12 +70,12 @@
         android:hint="Ingrese editorial del libro"
         android:inputType="text"
         android:textColor="@color/white"
-        android:textColorHint="#FFBDBDBD"
+        android:textColorHint="#BDBDBD"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView22" />
+        app:layout_constraintTop_toBottomOf="@+id/textView41" />
 
     <TextView
-        android:id="@+id/textView22"
+        android:id="@+id/textView41"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
@@ -105,10 +83,21 @@
         android:text="Editorial"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_autorAgregar" />
+        app:layout_constraintTop_toBottomOf="@+id/et_autorModificarP2" />
+
+    <TextView
+        android:id="@+id/textView39"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:fontFamily="@font/inter"
+        android:text="Título"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
     <ImageView
-        android:id="@+id/imageView14"
+        android:id="@+id/imageView12"
         android:layout_width="50dp"
         android:layout_height="46dp"
         android:layout_marginTop="8dp"
@@ -124,14 +113,14 @@
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView14">
+        app:layout_constraintTop_toBottomOf="@+id/imageView12">
 
         <TextView
             android:id="@+id/textView7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/josefin_sans_bold"
-            android:text="AGREGAR"
+            android:text="MODIFICAR"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="@color/white"
@@ -150,19 +139,8 @@
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/textView16"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:fontFamily="@font/inter"
-        android:text="Título"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
-
     <EditText
-        android:id="@+id/et_tituloAgregar"
+        android:id="@+id/et_tituloModificarP2"
         android:layout_width="317dp"
         android:layout_height="48dp"
         android:layout_marginStart="50dp"
@@ -174,10 +152,21 @@
         android:textColor="@color/white"
         android:textColorHint="#BDBDBD"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+        app:layout_constraintTop_toBottomOf="@+id/textView39" />
+
+    <TextView
+        android:id="@+id/textView44"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:fontFamily="@font/inter"
+        android:text="Autor"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_tituloModificarP2" />
 
     <EditText
-        android:id="@+id/et_autorAgregar"
+        android:id="@+id/et_autorModificarP2"
         android:layout_width="317dp"
         android:layout_height="48dp"
         android:layout_marginStart="50dp"
@@ -187,31 +176,42 @@
         android:hint="Ingrese autor del libro"
         android:inputType="text"
         android:textColor="@color/white"
-        android:textColorHint="#FFBDBDBD"
+        android:textColorHint="#BDBDBD"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+        app:layout_constraintTop_toBottomOf="@+id/textView44" />
 
     <TextView
-        android:id="@+id/textView17"
+        android:id="@+id/textView45"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:fontFamily="@font/inter"
-        android:text="Autor"
+        android:text="Fecha de publicación"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_tituloAgregar" />
+        app:layout_constraintTop_toBottomOf="@+id/et_idiomaModificarP2" />
 
     <CalendarView
-        android:id="@+id/cv_fecha"
+        android:id="@+id/calendarv_fechaPublicacionModificarP2"
         android:layout_width="319dp"
         android:layout_height="60dp"
         android:layout_marginStart="50dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView25" />
+        app:layout_constraintTop_toBottomOf="@+id/textView45" />
+
+    <TextView
+        android:id="@+id/textView46"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:fontFamily="@font/inter"
+        android:text="Imagen"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calendarv_fechaPublicacionModificarP2" />
 
     <ImageButton
-        android:id="@+id/ib_buscar"
+        android:id="@+id/imbtn_buscarImagenModificarP2"
         android:layout_width="50dp"
         android:layout_height="60dp"
         android:layout_marginStart="100dp"
@@ -219,21 +219,21 @@
         android:contentDescription="Buscar Imagen de Libro"
         android:scaleType="centerInside"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView26"
+        app:layout_constraintTop_toBottomOf="@+id/textView46"
         tools:srcCompat="@drawable/buscar_icono" />
 
     <ImageView
-        android:id="@+id/imv_libro"
+        android:id="@+id/img_mostrarImagenModificarP2"
         android:layout_width="50dp"
         android:layout_height="60dp"
         android:layout_marginEnd="100dp"
         android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView26"
+        app:layout_constraintTop_toBottomOf="@+id/textView46"
         app:srcCompat="@drawable/rectangle_9" />
 
     <Button
-        android:id="@+id/btn_agregar"
+        android:id="@+id/btn_modificarP2"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -242,8 +242,7 @@
         android:text="Agregar"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ib_buscar" />
+        app:layout_constraintTop_toBottomOf="@+id/imbtn_buscarImagenModificarP2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

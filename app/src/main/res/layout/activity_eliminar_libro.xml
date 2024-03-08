@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ReservaLibro"
-    android:background="@drawable/fondotercero">
+    android:background="@drawable/fondotercero"
+    tools:context=".EliminarLibroActivity">
 
     <ImageView
-        android:id="@+id/imageView10"
+        android:id="@+id/imageView88"
         android:layout_width="50dp"
         android:layout_height="46dp"
         android:layout_marginTop="8dp"
@@ -18,27 +18,27 @@
         app:srcCompat="@drawable/logo" />
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
+        android:id="@+id/linearLayout22"
         android:layout_width="298dp"
         android:layout_height="117dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView10">
+        app:layout_constraintTop_toBottomOf="@+id/imageView88">
 
         <TextView
-            android:id="@+id/textView7"
+            android:id="@+id/textView77"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/josefin_sans_bold"
-            android:text="RESERVAR"
+            android:text="ELIMINAR"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="@color/white"
             android:textSize="40dp" />
 
         <TextView
-            android:id="@+id/tv_usuario6"
+            android:id="@+id/tv_usuario66"
             android:layout_width="match_parent"
             android:layout_height="64dp"
             android:fontFamily="@font/josefin_sans_light"
@@ -51,7 +51,7 @@
     </LinearLayout>
 
     <androidx.appcompat.widget.SearchView
-        android:id="@+id/searchv_reservarLibro"
+        android:id="@+id/searchv_eliminarLibro"
         android:layout_width="349dp"
         android:layout_height="39dp"
         android:layout_marginTop="8dp"
@@ -60,60 +60,28 @@
         android:foregroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout22" />
 
-    <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ListView
+        android:id="@+id/lv_eliminarLibro"
+        android:layout_width="350dp"
+        android:layout_height="395dp"
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchv_reservarLibro">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_librosParaReservar"
-                android:layout_width="336dp"
-                android:layout_height="328dp" />
-        </LinearLayout>
-    </ScrollView>
+        app:layout_constraintTop_toBottomOf="@+id/searchv_eliminarLibro" />
 
     <TextView
-        android:id="@+id/textView28"
+        android:id="@+id/textView66"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:fontFamily="@font/josefin_sans_bold"
-        android:text="Fecha de entrega:"
+        android:text="Mantenga pulado un item para poder eliminarlo"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.233"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
-
-    <CalendarView
-        android:id="@+id/calendarv_reservarLibro"
-        android:layout_width="340dp"
-        android:layout_height="71dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView28" />
-
-    <Button
-        android:id="@+id/btn_reservar"
-        android:layout_width="200dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/borderedondeado"
-        android:text="Reservar"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calendarv_reservarLibro" />
+        app:layout_constraintTop_toBottomOf="@+id/lv_eliminarLibro" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

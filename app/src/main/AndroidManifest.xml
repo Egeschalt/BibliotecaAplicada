@@ -13,6 +13,18 @@
         android:theme="@style/Theme.AppBibliotecaEapis"
         tools:targetApi="31">
         <activity
+            android:name=".ListarLibrosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EliminarLibroActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ModificarLibro1_2_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ModificarLibro1_1_Activity"
+            android:exported="false" />
+        <activity
             android:name=".AgregarLibroActivity"
             android:exported="false" />
         <activity
