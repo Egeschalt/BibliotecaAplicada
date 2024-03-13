@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,44 +7,15 @@
     android:layout_height="match_parent"
     android:background="@drawable/fondoprincipal"
     tools:context=".IniciarSesion">
+
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="267dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp">
-
-            <View
-                android:id="@+id/ellipse_2"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginStart="68dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="68dp"
-                android:layout_marginBottom="16dp"
-                android:alpha="0.40000000596046"
-                android:background="@drawable/ellipse_3_shape"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="216dp"
-                android:layout_height="0dp"
-                android:layout_marginTop="29dp"
-                android:layout_marginBottom="29dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/logo" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -74,7 +45,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="492dp"
+            android:layout_height="653dp"
             android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
@@ -88,7 +59,7 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="506dp"
+                    android:layout_height="match_parent"
                     tools:layout_editor_absoluteX="16dp"
                     tools:layout_editor_absoluteY="0dp">
 
@@ -177,8 +148,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="22dp"
                         android:ems="10"
+                        android:hint="Nombres"
                         android:inputType="text"
-                        android:text="Usuario"
                         android:textSize="25sp"
                         app:layout_constraintBottom_toTopOf="@+id/et_email"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -186,30 +157,30 @@
                         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
                     <EditText
-                        android:id="@+id/et_contrasena"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="55dp"
-                        android:ems="10"
-                        android:inputType="text"
-                        android:text="Contraseña"
-                        android:textSize="25sp"
-                        app:layout_constraintBottom_toTopOf="@+id/bt_registro"
-                        app:layout_constraintStart_toStartOf="@+id/et_email"
-                        app:layout_constraintTop_toBottomOf="@+id/et_email" />
-
-                    <EditText
                         android:id="@+id/et_email"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="17dp"
                         android:ems="10"
+                        android:hint="Correo"
                         android:inputType="text"
-                        android:text="Email"
                         android:textSize="25sp"
                         app:layout_constraintBottom_toTopOf="@+id/et_contrasena"
                         app:layout_constraintStart_toStartOf="@+id/et_usuario"
                         app:layout_constraintTop_toBottomOf="@+id/et_usuario" />
+
+                    <EditText
+                        android:id="@+id/et_contrasena"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="55dp"
+                        android:ems="10"
+                        android:hint="Contraseña"
+                        android:inputType="text"
+                        android:textSize="25sp"
+                        app:layout_constraintBottom_toTopOf="@+id/bt_registro"
+                        app:layout_constraintStart_toStartOf="@+id/et_email"
+                        app:layout_constraintTop_toBottomOf="@+id/et_email" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
@@ -217,4 +188,4 @@
 
     </LinearLayout>
 
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
