@@ -34,7 +34,7 @@ public class IniciarSesion extends AppCompatActivity {
                 String Correo = et_Correo.getText().toString();
                 String Contrasena = et_Contrasena.getText().toString();
                 if(!Correo.isEmpty() && !Contrasena.isEmpty()) {
-                    if (Correo.equals("Bibliotecario") && Contrasena.equals("BibliotecarioContraseña")) {
+                    if (Correo.equals("bibliotecario1@unc.edu.pe") && Contrasena.equals("bibliotecario")) {
                         //Inicio de sesión de Bibliotecario
                         Context context = v.getContext();
                         Intent intent = new Intent(context, BienvenidoBibliotecarioActivity.class);

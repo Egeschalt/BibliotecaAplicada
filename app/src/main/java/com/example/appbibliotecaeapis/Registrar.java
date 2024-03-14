@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
@@ -22,6 +23,8 @@ public class Registrar extends AppCompatActivity {
         ImageButton btn_Registro;
         TextView tv_IniciaSesion;
         Spinner sp_Carrera;
+
+        String[] Carrera = {"Ingeniería de sistemas","Medicina","Ingeniería civil","Ingeniería de Minas"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +41,7 @@ public class Registrar extends AppCompatActivity {
         et_Codigo = findViewById(R.id.et_codEstudiante);
         sp_Carrera = findViewById(R.id.sp_carreras);
 
+        sp_Carrera.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, Carrera));
         tv_IniciaSesion.setOnClickListener(new View.OnClickListener() {
             @Override
            public void onClick(View v) {
