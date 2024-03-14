@@ -7,7 +7,7 @@ import androidx.annotation.Nullable;
 
 public class BDPrestamoOpenHelper extends SQLiteOpenHelper {
     String tabla_estudiante = "CREATE TABLE Estudiante(" +
-            "IdEstudiante INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
+            "IdEstudiante VARCHAR(10) NOT NULL PRIMARY KEY," +
             "Nombre VARCHAR(40) NOT NULL UNIQUE," +
             "Apellidos VARCHAR(40) NOT NULL," +
             "Dni VARCHAR(8) NOT NULL," +

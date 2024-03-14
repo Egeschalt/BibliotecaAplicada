@@ -1,10 +1,8 @@
 package com.example.appbibliotecaeapis;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -15,7 +13,6 @@ import android.widget.Toast;
 
 import Model.Estudiante;
 import VistaModelo.VMEstudiante;
-import kotlin.jvm.JvmWildcard;
 
 public class Registrar extends AppCompatActivity {
 
@@ -31,7 +28,7 @@ public class Registrar extends AppCompatActivity {
         et_Usuario = findViewById(R.id.et_usuario);
         et_Correo = findViewById(R.id.et_email);
         et_Contrasena = findViewById(R.id.et_contrasena);
-        btn_Registro = findViewById(R.id.bt_registro);
+        btn_Registro = findViewById(R.id.bt_iniciarSesion);
         tv_IniciaSesion = findViewById(R.id.tv_iniciaSesion);
 
         btn_Registro.setOnClickListener(new View.OnClickListener() {

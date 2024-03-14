@@ -44,7 +44,6 @@ public class VMEstudiante {
             oRegistro.put("apellidosEstudiante", estudiante.getApellidos());
             oRegistro.put("carreraEstudiante", estudiante.getCarrera());
             oRegistro.put("correoEstudiante", estudiante.getCorreo());
-            oRegistro.put("usuarioEstudiante", estudiante.getUsuario());
             oRegistro.put("contasenaEstudiante", estudiante.getContrasena());
             oRegistro.put("telefonoEstudiante", estudiante.getTelefono());
 

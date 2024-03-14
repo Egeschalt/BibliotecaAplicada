@@ -106,7 +106,7 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/textView12"
-                        app:layout_constraintTop_toBottomOf="@+id/bt_registro"
+                        app:layout_constraintTop_toBottomOf="@+id/bt_iniciarSesion"
                         tools:ignore="TouchTargetSizeCheck" />
 
                     <TextView
@@ -123,7 +123,7 @@
                         app:layout_constraintStart_toStartOf="parent" />
 
                     <ImageButton
-                        android:id="@+id/bt_registro"
+                        android:id="@+id/bt_iniciarSesion"
                         android:layout_width="223dp"
                         android:layout_height="0dp"
                         android:layout_marginBottom="6dp"
@@ -147,7 +147,7 @@
                         android:textColor="@color/white"
                         android:textSize="20sp"
                         android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="@+id/bt_registro"
+                        app:layout_constraintBottom_toBottomOf="@+id/bt_iniciarSesion"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         tools:ignore="TouchTargetSizeCheck" />
@@ -196,7 +196,7 @@
                         android:inputType="text"
                         android:text="Contraseña"
                         android:textSize="25sp"
-                        app:layout_constraintBottom_toTopOf="@+id/bt_registro"
+                        app:layout_constraintBottom_toTopOf="@+id/bt_iniciarSesion"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/et_usuario" />
