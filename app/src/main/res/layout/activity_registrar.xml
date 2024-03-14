@@ -111,7 +111,7 @@
         android:id="@+id/et_nombres"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:backgroundTint="@color/black"
         android:ems="10"
         android:hint="Nombres"
@@ -126,7 +126,7 @@
         android:id="@+id/et_correoEstud"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:backgroundTint="@color/black"
         android:ems="10"
         android:hint="Correo"
@@ -141,7 +141,7 @@
         android:id="@+id/et_apelidosEstud"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:backgroundTint="@color/black"
         android:ems="10"
         android:hint="Apellidos"
@@ -156,7 +156,7 @@
         android:id="@+id/et_carreraEstud"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:backgroundTint="@color/black"
         android:ems="10"
         android:hint="Carrera"
@@ -165,13 +165,13 @@
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="@+id/imageView9"
         app:layout_constraintStart_toStartOf="@+id/imageView9"
-        app:layout_constraintTop_toBottomOf="@+id/et_apelidosEstud" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumberSigned" />
 
     <EditText
         android:id="@+id/et_contrasenaEstud"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:backgroundTint="@color/black"
         android:ems="10"
         android:hint="Contraseña"
@@ -186,7 +186,7 @@
         android:id="@+id/et_celular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:backgroundTint="@color/black"
         android:ems="10"
         android:hint="Celular"
@@ -196,5 +196,18 @@
         app:layout_constraintEnd_toEndOf="@+id/imageView9"
         app:layout_constraintStart_toStartOf="@+id/imageView9"
         app:layout_constraintTop_toBottomOf="@+id/et_contrasenaEstud" />
+
+    <EditText
+        android:id="@+id/editTextNumberSigned"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="DNI"
+        android:inputType="numberSigned"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView9"
+        app:layout_constraintStart_toStartOf="@+id/imageView9"
+        app:layout_constraintTop_toBottomOf="@+id/et_apelidosEstud" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
