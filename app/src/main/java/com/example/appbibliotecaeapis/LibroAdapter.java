@@ -26,19 +26,11 @@ public class LibroAdapter extends RecyclerView.Adapter<LibroAdapter.ViewHolder> 
     }
     OnLibroClickListener onLibroClickListener;
     public interface OnLibroClickListener{
-        void onPlatoClick(Libro libro);
+        void onLibroClick(Libro libro);
     }
 
-    public void setOnPlatoClickListener(OnLibroClickListener onLibroClickListener){
+    public void setOnLibroClickListener(OnLibroClickListener onLibroClickListener){
         this.onLibroClickListener = onLibroClickListener;
-    }
-
-    OnImagenClickListener onImagenClickListener;
-    public interface OnImagenClickListener{
-        void onImagenClick(Libro Libro);
-    }
-    public void setOnImagenClickListener(OnImagenClickListener onImagenClickListener){
-        this.onImagenClickListener = onImagenClickListener;
     }
 
     @NonNull
@@ -58,7 +50,12 @@ public class LibroAdapter extends RecyclerView.Adapter<LibroAdapter.ViewHolder> 
         holder.tvFecha.setText(libro.getFechaPublicacion());
         holder.tvIdioma.setText(libro.getIdioma());
         holder.ivLibro.setImageBitmap(decodificarByteBitMap(libro.getImgLibro()));
-
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onLibroClickListener.onLibroClick(libro);
+            }
+        });
     }
     //Decodificar una imagen (arreglo de bytes) a bitmap para poder usarlo en la base de datos
     private Bitmap decodificarByteBitMap(byte[] imagen){

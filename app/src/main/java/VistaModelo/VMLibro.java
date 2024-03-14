@@ -2,6 +2,7 @@ package VistaModelo;
 
 import android.app.Activity;
 import android.content.ContentValues;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
@@ -63,6 +64,32 @@ public class VMLibro {
             }
         }
 
+        return rpta;
+    }
+    public boolean CargarLibros(Activity oActivity){
+        boolean rpta=false;
+        listaLibros.clear();
+        BDPrestamoOpenHelper bdPrestamoOpenHelper=new BDPrestamoOpenHelper(oActivity,nombreBD,null,version);
+        SQLiteDatabase oBD=bdPrestamoOpenHelper.getReadableDatabase();
+        Cursor oRegistros=oBD.rawQuery("select * from Libro",null);
+
+        if (oRegistros.moveToFirst()){
+            rpta=true;
+            do{
+                String Titulo=oRegistros.getString(1);
+                String Autor = oRegistros.getString(2);
+                String Editorial = oRegistros.getString(3);
+                String Genero = oRegistros.getString(4);
+                String Idioma = oRegistros.getString(5);
+                String FechaPublicacion = oRegistros.getString(6);
+                byte[] Imagen= oRegistros.getBlob(7);
+                int CantidadDisponible=oRegistros.getInt(8);
+                int Stock=oRegistros.getInt(9);
+                Libro libro = new Libro(Titulo,Autor,Editorial,Genero,Idioma,FechaPublicacion,Imagen,CantidadDisponible,Stock);
+                listaLibros.add(libro);
+            }while (oRegistros.moveToNext());
+            oBD.close();
+        }
         return rpta;
     }
     public ArrayList<Libro> listarLibro(){

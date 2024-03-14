@@ -16,7 +16,7 @@
         android:text="[Autor]"
         android:textColor="@color/black"
         android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/imageView17"
+        app:layout_constraintStart_toEndOf="@+id/iv_imgLibroPrestar"
         app:layout_constraintTop_toBottomOf="@+id/tv_idiomaPrestaP2" />
 
     <ImageView
@@ -96,7 +96,7 @@
         app:srcCompat="@drawable/bordes_botones_bibliotecario" />
 
     <ImageView
-        android:id="@+id/imageView17"
+        android:id="@+id/iv_imgLibroPrestar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="26dp"
@@ -115,7 +115,7 @@
         android:text="[TITULO]"
         android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/imageView17"
+        app:layout_constraintStart_toEndOf="@+id/iv_imgLibroPrestar"
         app:layout_constraintTop_toTopOf="@+id/imageView16" />
 
     <TextView
@@ -128,7 +128,7 @@
         android:text="[Autor]"
         android:textColor="@color/black"
         android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/imageView17"
+        app:layout_constraintStart_toEndOf="@+id/iv_imgLibroPrestar"
         app:layout_constraintTop_toBottomOf="@+id/tv_tituloPrestaP2" />
 
     <TextView
@@ -141,7 +141,7 @@
         android:text="[Idioma]"
         android:textColor="@color/black"
         android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/imageView17"
+        app:layout_constraintStart_toEndOf="@+id/iv_imgLibroPrestar"
         app:layout_constraintTop_toBottomOf="@+id/tv_AutorPrestaP2" />
 
     <TextView
@@ -154,11 +154,11 @@
         android:text="[Cantidad disponible]"
         android:textColor="@color/black"
         android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/imageView17"
+        app:layout_constraintStart_toEndOf="@+id/iv_imgLibroPrestar"
         app:layout_constraintTop_toTopOf="@+id/textView36" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/btn_prestar"
         android:layout_width="247dp"
         android:layout_height="42dp"
         android:layout_marginTop="16dp"
@@ -178,9 +178,9 @@
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton"
-        app:layout_constraintEnd_toEndOf="@+id/imageButton"
-        app:layout_constraintStart_toStartOf="@+id/imageButton"
-        app:layout_constraintTop_toTopOf="@+id/imageButton" />
+        app:layout_constraintBottom_toBottomOf="@+id/btn_prestar"
+        app:layout_constraintEnd_toEndOf="@+id/btn_prestar"
+        app:layout_constraintStart_toStartOf="@+id/btn_prestar"
+        app:layout_constraintTop_toTopOf="@+id/btn_prestar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
