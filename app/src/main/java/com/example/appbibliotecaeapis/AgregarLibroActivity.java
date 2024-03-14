@@ -93,10 +93,6 @@ public class AgregarLibroActivity extends AppCompatActivity {
         else {
             Toast.makeText(this,"No Se agrego  el Libro",Toast.LENGTH_SHORT).show();
         }
-
-
-
-
     }
 
     private void cargarImagen() {
