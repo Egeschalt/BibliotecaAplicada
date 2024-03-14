@@ -10,6 +10,7 @@ import java.util.Date;
 
 public class Libro implements Parcelable {
 
+    int IdLibro;
     String titulo;
     String autor;
     String editorial;
@@ -21,9 +22,11 @@ public class Libro implements Parcelable {
     int cantidadDisponible;
 
     int Stock;
+    public Libro(){
 
-
-    public Libro( String titulo, String autor, String editorial, String genero, String idioma, String fechaPublicacion,  byte[] imgLibro,int cantidadDisponible,int stock) {
+    }
+    public Libro(int idLibro, String titulo, String autor, String editorial, String genero, String idioma, String fechaPublicacion, byte[] imgLibro, int cantidadDisponible, int stock) {
+        IdLibro = idLibro;
         this.titulo = titulo;
         this.autor = autor;
         this.editorial = editorial;
@@ -31,22 +34,39 @@ public class Libro implements Parcelable {
         this.idioma = idioma;
         this.fechaPublicacion = fechaPublicacion;
         this.imgLibro = imgLibro;
-        this.cantidadDisponible=cantidadDisponible;
-        this.Stock=stock;
+        this.cantidadDisponible = cantidadDisponible;
+        Stock = stock;
     }
 
     protected Libro(Parcel in) {
-
+        IdLibro = in.readInt();
         titulo = in.readString();
         autor = in.readString();
         editorial = in.readString();
         genero = in.readString();
         idioma = in.readString();
-
-
+        fechaPublicacion = in.readString();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             imgLibro = in.readBlob();
         }
+        cantidadDisponible = in.readInt();
+        Stock = in.readInt();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(IdLibro);
+        dest.writeString(titulo);
+        dest.writeString(autor);
+        dest.writeString(editorial);
+        dest.writeString(genero);
+        dest.writeString(idioma);
+        dest.writeString(fechaPublicacion);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            dest.writeBlob(imgLibro);
+        }
+        dest.writeInt(cantidadDisponible);
+        dest.writeInt(Stock);
     }
 
     public static final Creator<Libro> CREATOR = new Creator<Libro>() {
@@ -60,6 +80,22 @@ public class Libro implements Parcelable {
             return new Libro[size];
         }
     };
+
+    public int getIdLibro() {
+        return IdLibro;
+    }
+
+    public Libro(String titulo, String autor, String editorial, String genero, String idioma, String fechaPublicacion, byte[] imgLibro, int cantidadDisponible, int stock) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.editorial = editorial;
+        this.genero = genero;
+        this.idioma = idioma;
+        this.fechaPublicacion = fechaPublicacion;
+        this.imgLibro = imgLibro;
+        this.cantidadDisponible=cantidadDisponible;
+        this.Stock=stock;
+    }
 
 
 
@@ -142,19 +178,5 @@ public class Libro implements Parcelable {
     @Override
     public int describeContents() {
         return 0;
-    }
-
-    @Override
-    public void writeToParcel(@NonNull Parcel parcel, int i) {
-
-        parcel.writeString(titulo);
-        parcel.writeString(autor);
-        parcel.writeString(editorial);
-        parcel.writeString(genero);
-        parcel.writeString(idioma);
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            parcel.writeBlob(imgLibro);
-        }
     }
 }

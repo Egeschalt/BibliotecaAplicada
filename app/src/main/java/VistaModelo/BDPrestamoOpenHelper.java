@@ -42,7 +42,7 @@ public class BDPrestamoOpenHelper extends SQLiteOpenHelper {
             "IdLibro INTEGER NOT NULL," +
             "IdEstudiante INTEGER NOT NULL," +
             "IdBibliotecario INTEGER NOT NULL," +
-            "FechaDePréstamo VARCHAR(20) NOT NULL," +
+            "FechaDePrestamo VARCHAR(20) NOT NULL," +
             "FechaDeDevolución VARCHAR(20) NOT NULL," +
             "FechaDeVencimiento VARCHAR(20) NOT NULL," +
             "FOREIGN KEY(IdLibro) REFERENCES Libro(IdLibro)," +

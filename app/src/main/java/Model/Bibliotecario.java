@@ -15,6 +15,9 @@ public class Bibliotecario implements Parcelable {
     String contrasena;
     byte[] fotoBibliotecario;
 
+    public Bibliotecario(){
+
+    }
     public Bibliotecario(String idBibliotecario, String nombre, String apellidos, String telefono, String correo, String contrasena, byte[] fotoBibliotecario) {
         this.idBibliotecario = idBibliotecario;
         this.nombre = nombre;

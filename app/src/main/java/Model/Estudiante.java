@@ -18,6 +18,9 @@ public class Estudiante implements Parcelable {
     String telefono;
     byte[] fotoEstudiante;//
 
+    public Estudiante() {
+
+    }
     public Estudiante(String codEstudiante, String nombre, String apellidos, String dni, String carrera, String correo, String contrasena, String telefono, byte[] fotoEstudiante) {
         this.codEstudiante = codEstudiante;
         this.nombre = nombre;
