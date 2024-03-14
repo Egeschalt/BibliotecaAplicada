@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -19,7 +18,7 @@ public class IniciarSesion extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_iniciar_sesion);
-        et_Contrasena = findViewById(R.id.et_contrasena);
+        et_Contrasena = findViewById(R.id.et_contrasenaEstud);
         et_Usuario = findViewById(R.id.et_usuario);
         btn_IniciarSesion = findViewById(R.id.bt_iniciarSesion);
 

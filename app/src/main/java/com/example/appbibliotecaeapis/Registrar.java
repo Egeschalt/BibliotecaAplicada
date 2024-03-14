@@ -26,8 +26,8 @@ public class Registrar extends AppCompatActivity {
         setContentView(R.layout.activity_registrar);
         vmEstudiante = new VMEstudiante(this);
         et_Usuario = findViewById(R.id.et_usuario);
-        et_Correo = findViewById(R.id.et_email);
-        et_Contrasena = findViewById(R.id.et_contrasena);
+        et_Correo = findViewById(R.id.et_correoEstud);
+        et_Contrasena = findViewById(R.id.et_contrasenaEstud);
         btn_Registro = findViewById(R.id.bt_iniciarSesion);
         tv_IniciaSesion = findViewById(R.id.tv_iniciaSesion);
 

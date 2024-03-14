@@ -11,13 +11,13 @@ public class Estudiante implements Parcelable {
     String codEstudiante;
     String nombre;
     String apellidos;
-    String dni;
+    String dni;//
     String carrera;
     String correo;
-    String usuario;
+    String usuario;//Quitar
     String contrasena;
     String telefono;
-    byte[] fotoEstudiante;
+    byte[] fotoEstudiante;//
 
     public Estudiante(String codEstudiante, String nombre, String apellidos, String dni, String carrera, String correo,  String usuario, String contrasena, String telefono, byte[] fotoEstudiante) {
         this.codEstudiante = codEstudiante;
