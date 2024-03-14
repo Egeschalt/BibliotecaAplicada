@@ -92,6 +92,27 @@ public class VMLibro {
         }
         return rpta;
     }
+
+    public Libro Buscar(Activity oActivity, int id){
+        BDPrestamoOpenHelper bdLibrosOpenHelper = new BDPrestamoOpenHelper(oActivity,nombreBD,null,version);
+        SQLiteDatabase oBD = bdLibrosOpenHelper.getReadableDatabase();
+        Cursor oRegistros= oBD.rawQuery("select * from Libro where IdLibro="+id,null);
+        Libro oLibro=null;
+
+        if (oRegistros.moveToFirst()){
+            String Titulo=oRegistros.getString(1);
+            String Autor = oRegistros.getString(2);
+            String Editorial = oRegistros.getString(3);
+            String Genero = oRegistros.getString(4);
+            String Idioma = oRegistros.getString(5);
+            String FechaPublicacion = oRegistros.getString(6);
+            byte[] Imagen= oRegistros.getBlob(7);
+            int CantidadDisponible=oRegistros.getInt(8);
+            int Stock=oRegistros.getInt(9);
+            oLibro = new Libro(Titulo,Autor,Editorial,Genero,Idioma,FechaPublicacion,Imagen,CantidadDisponible,Stock);
+        }
+        return oLibro;
+    }
     public ArrayList<Libro> listarLibro(){
         return listaLibros;
     }
