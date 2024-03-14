@@ -13,6 +13,7 @@ public class BDPrestamoOpenHelper extends SQLiteOpenHelper {
             "Dni VARCHAR(8) NOT NULL," +
             "Carrera VARCHAR(40) NOT NULL," +
             "Correo VARCHAR(40) NOT NULL," +
+            "Contraseña VARCHAR(40) NOT NULL," +
             "Telefono VARCHAR(9) NOT NULL," +
             "fotoEstudiante BYTE)";
 

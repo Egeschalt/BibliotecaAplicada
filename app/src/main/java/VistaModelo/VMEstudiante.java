@@ -43,9 +43,10 @@ public class VMEstudiante {
             oRegistro.put("IdEstudiante", estudiante.getCodEstudiante());
             oRegistro.put("Nombre", estudiante.getNombre());
             oRegistro.put("Apellidos", estudiante.getApellidos());
-            oRegistro.put("Dni", estudiante.getCarrera());
-            oRegistro.put("Carrera", estudiante.getCorreo());
-            oRegistro.put("Correo", estudiante.getContrasena());
+            oRegistro.put("Dni", estudiante.getDni());
+            oRegistro.put("Carrera", estudiante.getCarrera());
+            oRegistro.put("Correo", estudiante.getCorreo());
+            oRegistro.put("Contraseña", estudiante.getContrasena());
             oRegistro.put("Telefono", estudiante.getTelefono());
             oRegistro.put("fotoEstudiante", estudiante.getFoto());
             long fila = oBD.insert("Estudiante", null, oRegistro);
@@ -64,7 +65,7 @@ public class VMEstudiante {
 
         if (oBD != null) {
             String[] args = new String[]{correo, contrasena};
-            Cursor c = oBD.rawQuery("SELECT * FROM Estudiante WHERE correoEstudiante=? AND contrasenaEstudiante=?", args);
+            Cursor c = oBD.rawQuery("SELECT * FROM Estudiante WHERE Correo=? AND Contraseña=?", args);
 
             if (c.moveToFirst()) {
                 existeEstudiante = true;
