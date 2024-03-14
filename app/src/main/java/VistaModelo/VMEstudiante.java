@@ -42,7 +42,7 @@ public class VMEstudiante {
             ContentValues oRegistro = new ContentValues();
             oRegistro.put("IdEstudiante", estudiante.getCodEstudiante());
             oRegistro.put("Nombre", estudiante.getNombre());
-            oRegistro.put("Apellido", estudiante.getApellidos());
+            oRegistro.put("Apellidos", estudiante.getApellidos());
             oRegistro.put("Dni", estudiante.getCarrera());
             oRegistro.put("Carrera", estudiante.getCorreo());
             oRegistro.put("Correo", estudiante.getContrasena());
