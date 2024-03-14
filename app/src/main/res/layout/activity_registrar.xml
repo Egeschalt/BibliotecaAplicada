@@ -130,7 +130,7 @@
         android:backgroundTint="@color/black"
         android:ems="10"
         android:hint="Correo"
-        android:inputType="text"
+        android:inputType="textPassword"
         android:textColor="@color/black"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="@+id/imageView9"
@@ -183,7 +183,7 @@
         app:layout_constraintTop_toBottomOf="@+id/et_contrasenaEstud" />
 
     <EditText
-        android:id="@+id/editTextNumberSigned"
+        android:id="@+id/et_dniEst"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -202,6 +202,7 @@
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="@+id/imageView9"
         app:layout_constraintStart_toStartOf="@+id/imageView9"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumberSigned" />
+        app:layout_constraintTop_toBottomOf="@+id/et_dniEst" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

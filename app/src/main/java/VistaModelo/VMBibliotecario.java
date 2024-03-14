@@ -25,6 +25,8 @@ public class VMBibliotecario {
 
     private void InsertarBibliotecario(){
 
+      Bibliotecario bibliotecario1=new Bibliotecario("1","Juan","Pérez","945123100","bibliotecario1@unc.edu.pe","bibliotecario");
+        AgregarBibliotecario(bibliotecario1);
     }
     private boolean AgregarBibliotecario(Bibliotecario bibliotecario) {
         boolean rpta = false;
@@ -37,7 +39,6 @@ public class VMBibliotecario {
             oRegistro.put("apellidosBibliotecario", bibliotecario.getApellidos());
             oRegistro.put("telefonoBibliotecario", bibliotecario.getTelefono());
             oRegistro.put("correoBibliotecario", bibliotecario.getCorreo());
-            oRegistro.put("usuarioBibliotecario", bibliotecario.getUsuario());
             oRegistro.put("contasenaBibliotecario", bibliotecario.getContrasena());
             oRegistro.put("fotoBibliotecario", bibliotecario.getFotoBibliotecario());
 

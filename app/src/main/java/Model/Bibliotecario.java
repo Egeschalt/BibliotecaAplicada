@@ -12,19 +12,25 @@ public class Bibliotecario implements Parcelable {
     String apellidos;
     String telefono;
     String correo;
-    String usuario;
     String contrasena;
     byte[] fotoBibliotecario;
 
-    public Bibliotecario(String idBibliotecario, String nombre, String apellidos, String telefono, String correo, String usuario, String contrasena, byte[] fotoBibliotecario) {
+    public Bibliotecario(String idBibliotecario, String nombre, String apellidos, String telefono, String correo, String contrasena, byte[] fotoBibliotecario) {
         this.idBibliotecario = idBibliotecario;
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.telefono = telefono;
         this.correo = correo;
-        this.usuario = usuario;
         this.contrasena = contrasena;
         this.fotoBibliotecario = fotoBibliotecario;
+    }
+    public Bibliotecario(String idBibliotecario, String nombre, String apellidos, String telefono, String correo, String contrasena) {
+        this.idBibliotecario = idBibliotecario;
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.telefono = telefono;
+        this.correo = correo;
+        this.contrasena = contrasena;
     }
 
     protected Bibliotecario(Parcel in) {
@@ -33,7 +39,6 @@ public class Bibliotecario implements Parcelable {
         apellidos = in.readString();
         telefono = in.readString();
         correo = in.readString();
-        usuario = in.readString();
         contrasena = in.readString();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             fotoBibliotecario = in.readBlob();
@@ -92,13 +97,6 @@ public class Bibliotecario implements Parcelable {
         this.correo = correo;
     }
 
-    public String getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
-    }
 
     public String getContrasena() {
         return contrasena;
@@ -128,7 +126,6 @@ public class Bibliotecario implements Parcelable {
         parcel.writeString(apellidos);
         parcel.writeString(telefono);
         parcel.writeString(correo);
-        parcel.writeString(usuario);
         parcel.writeString(contrasena);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             parcel.writeBlob(fotoBibliotecario);
