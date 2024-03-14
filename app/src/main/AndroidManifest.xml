@@ -28,7 +28,7 @@
             android:name=".ModificarLibro1_1_Activity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ListarLibrosActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -61,7 +61,7 @@
             android:name=".IniciarSesion"
             android:exported="false" />
         <activity
-            android:name=".ListarLibrosActivity"
+            android:name=".MainActivity"
             android:exported="false">
         </activity>
 

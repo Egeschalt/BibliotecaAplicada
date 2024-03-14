@@ -28,10 +28,10 @@ public class ModificarLibro1_1_Activity extends AppCompatActivity {
 
         lvlibros= findViewById(R.id.lv_modificarLibroP1);
 
-        vmLibro.cargarLibros(this);
+        vmLibro.CargarLibros(this);
 
 // Actualiza el adaptador del ListView con los nuevos datos
-        ArrayList<Libro> listaLibros = vmLibro.listarLibros();
+        ArrayList<Libro> listaLibros = vmLibro.listarLibro();
         ArrayAdapter<Libro> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listaLibros);
         lvlibros.setAdapter(adapter);
         registerForContextMenu(lvlibros);
@@ -47,7 +47,7 @@ public class ModificarLibro1_1_Activity extends AppCompatActivity {
     @Override
     public boolean onContextItemSelected(@NonNull MenuItem item) {
         AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
-        if (item.getItemId() == R.id.im_modificar) {
+
             // Obtener el libro seleccionado
 
 
@@ -60,14 +60,14 @@ public class ModificarLibro1_1_Activity extends AppCompatActivity {
             startActivity(intent);
 
             return true;
-        }
-        return super.onContextItemSelected(item);
+
+
     }
 
     private Libro obtenerLibro(int position) {
 
 
-            ArrayList<Libro> lista = vmLibro.listarLibros();
+            ArrayList<Libro> lista = vmLibro.listarLibro();
             if (position >= 0 && position < lista.size()) {
                 return lista.get(position);
             }

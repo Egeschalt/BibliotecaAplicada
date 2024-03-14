@@ -179,4 +179,10 @@ public class Libro implements Parcelable {
     public int describeContents() {
         return 0;
     }
+
+
+    @Override
+    public String toString() {
+        return titulo + " - "+ autor + "-"+ Stock;
+    }
 }
