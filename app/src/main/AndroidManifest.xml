@@ -16,7 +16,7 @@
             android:name=".ReservarLibro_2"
             android:exported="false" />
         <activity
-            android:name=".ListarLibrosActivity"
+            android:name=".AgregarLibroActivity"
             android:exported="false" />
         <activity
             android:name=".EliminarLibroActivity"
@@ -61,7 +61,7 @@
             android:name=".IniciarSesion"
             android:exported="false" />
         <activity
-            android:name=".AgregarLibroActivity"
+            android:name=".ListarLibrosActivity"
             android:exported="false">
         </activity>
 
