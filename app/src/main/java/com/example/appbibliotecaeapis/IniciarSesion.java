@@ -44,8 +44,7 @@ public class IniciarSesion extends AppCompatActivity {
                         boolean esEstudiante = verificarEstudianteEnBD(Correo, Contrasena);
                         if (esEstudiante) {
                             // Inicio de sesión exitoso para estudiante
-                            Context context = v.getContext();
-                            Intent intent = new Intent(context, Bienvenido.class);
+                            Intent intent = new Intent(IniciarSesion.this, Bienvenido.class);
                             startActivity(intent);
                         } else {
                             Toast.makeText(IniciarSesion.this, "Correo o contraseña incorrectos", Toast.LENGTH_SHORT).show();
