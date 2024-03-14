@@ -38,12 +38,12 @@ public class Registrar extends AppCompatActivity {
         et_Codigo = findViewById(R.id.et_codEstudiante);
         sp_Carrera = findViewById(R.id.sp_carreras);
 
-//        tv_IniciaSesion.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                PantallaSesion(v);
-//            }
-//        });
+        tv_IniciaSesion.setOnClickListener(new View.OnClickListener() {
+            @Override
+           public void onClick(View v) {
+                PantallaSesion();
+            }
+        });
         btn_Registro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,6 +70,7 @@ public class Registrar extends AppCompatActivity {
                         vmEstudiante=new VMEstudiante(this);
                         if (vmEstudiante.AgregarEstudiante(this,estudiante)) {
                             Toast.makeText(this, "Agregado Correctamente", Toast.LENGTH_SHORT).show();
+                            PantallaSesion();
                         }
                     } else {
                         Toast.makeText(this, "Código Inválido", Toast.LENGTH_SHORT).show();
@@ -85,9 +86,9 @@ public class Registrar extends AppCompatActivity {
             Toast.makeText(Registrar.this, "Rellene los Campos faltantes", Toast.LENGTH_SHORT).show();
         }
     }
-    public void PantallaSesion(View view){
-        Context context=view.getContext();
-        Intent intent=new Intent(context, IniciarSesion.class);
+    public void PantallaSesion(){
+        Intent intent = new Intent(Registrar.this, IniciarSesion.class);
         startActivity(intent);
+        finish();
     }
 }
