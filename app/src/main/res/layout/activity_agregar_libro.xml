@@ -53,7 +53,7 @@
         android:text="Fecha de publicación"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumberSigned2" />
+        app:layout_constraintTop_toBottomOf="@+id/et_stock" />
 
     <TextView
         android:id="@+id/textView26"
@@ -258,7 +258,7 @@
         app:layout_constraintTop_toBottomOf="@+id/ib_buscar" />
 
     <EditText
-        android:id="@+id/editTextNumberSigned2"
+        android:id="@+id/et_stock"
         android:layout_width="317dp"
         android:layout_height="48dp"
         android:layout_marginStart="50dp"

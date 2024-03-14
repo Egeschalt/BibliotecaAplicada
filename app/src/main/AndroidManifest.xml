@@ -28,7 +28,7 @@
             android:name=".ModificarLibro1_1_Activity"
             android:exported="false" />
         <activity
-            android:name=".AgregarLibroActivity"
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".BienvenidoBibliotecarioActivity"
@@ -55,7 +55,7 @@
             android:name=".IniciarSesion"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".AgregarLibroActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

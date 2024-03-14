@@ -43,8 +43,9 @@ public class VMLibro {
                 oRegistro.put("genero", libro.getGenero());
                 oRegistro.put("idioma", libro.getIdioma());
                 oRegistro.put("FechaDePublicación", libro.getFechaPublicacion());
-                oRegistro.put("disponibilidad", libro.isDisponibilidad());
                 oRegistro.put("fotoLibro", libro.getImgLibro());
+                oRegistro.put("cantidadDisponible", libro.getCantidadDisponible());
+                oRegistro.put("stock", libro.getStock());
 
                 long fila = oBD.insert("Libro", null, oRegistro);
                 Log.d("valor de fila", String.valueOf(fila));

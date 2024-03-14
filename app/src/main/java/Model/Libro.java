@@ -16,18 +16,23 @@ public class Libro implements Parcelable {
     String genero;
     String idioma;
     String fechaPublicacion;
-    boolean disponibilidad;
-    byte[] imgLibro;
 
-    public Libro( String titulo, String autor, String editorial, String genero, String idioma, String fechaPublicacion, boolean disponibilidad, byte[] imgLibro) {
+    byte[] imgLibro;
+    int cantidadDisponible;
+
+    int Stock;
+
+
+    public Libro( String titulo, String autor, String editorial, String genero, String idioma, String fechaPublicacion,  byte[] imgLibro,int cantidadDisponible,int stock) {
         this.titulo = titulo;
         this.autor = autor;
         this.editorial = editorial;
         this.genero = genero;
         this.idioma = idioma;
         this.fechaPublicacion = fechaPublicacion;
-        this.disponibilidad = disponibilidad;
         this.imgLibro = imgLibro;
+        this.cantidadDisponible=cantidadDisponible;
+        this.Stock=stock;
     }
 
     protected Libro(Parcel in) {
@@ -37,7 +42,8 @@ public class Libro implements Parcelable {
         editorial = in.readString();
         genero = in.readString();
         idioma = in.readString();
-        disponibilidad = in.readByte() != 0;
+
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             imgLibro = in.readBlob();
         }
@@ -105,13 +111,9 @@ public class Libro implements Parcelable {
         this.fechaPublicacion = fechaPublicacion;
     }
 
-    public boolean isDisponibilidad() {
-        return disponibilidad;
-    }
 
-    public void setDisponibilidad(boolean disponibilidad) {
-        this.disponibilidad = disponibilidad;
-    }
+
+
 
     public byte[] getImgLibro() {
         return imgLibro;
@@ -119,6 +121,22 @@ public class Libro implements Parcelable {
 
     public void setImgLibro(byte[] imgLibro) {
         this.imgLibro = imgLibro;
+    }
+
+    public int getCantidadDisponible() {
+        return cantidadDisponible;
+    }
+
+    public void setCantidadDisponible(int cantidadDisponible) {
+        this.cantidadDisponible = cantidadDisponible;
+    }
+
+    public int getStock() {
+        return Stock;
+    }
+
+    public void setStock(int stock) {
+        Stock = stock;
     }
 
     @Override
@@ -134,7 +152,7 @@ public class Libro implements Parcelable {
         parcel.writeString(editorial);
         parcel.writeString(genero);
         parcel.writeString(idioma);
-        parcel.writeByte((byte) (disponibilidad ? 1 : 0));
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             parcel.writeBlob(imgLibro);
         }

@@ -31,8 +31,11 @@ public class BDPrestamoOpenHelper extends SQLiteOpenHelper {
             "genero VARCHAR(20) NOT NULL," +
             "idioma VARCHAR(20) NOT NULL," +
             "FechaDePublicación VARCHAR(20) NOT NULL," +
-            "disponibilidad BOOLEAN NOT NULL," +
-            "fotoLibro BYTE)";
+            "fotoLibro BYTE NOT NULL," +
+            "cantidadDisponible INTEGER NOT NULL," +
+            "stock INTEGER)";
+
+
     String tabla_prestamo = "CREATE TABLE Prestamo(" +
             "IdPrestamo INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
             "IdLibro INTEGER NOT NULL," +
