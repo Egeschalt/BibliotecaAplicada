@@ -65,5 +65,16 @@ public class VMLibro {
 
         return rpta;
     }
+    public ArrayList<Libro> listarLibro(){
+        return listaLibros;
+    }
+
+    public int contarLibros(){
+        return listaLibros.size();
+    }
+
+    public Libro obtenerLibro(int indice){
+        return listaLibros.get(indice);
+}
 
 }
