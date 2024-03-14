@@ -33,11 +33,10 @@ public class IniciarSesion extends AppCompatActivity {
             public void onClick(View v) {
                 String Correo = et_Correo.getText().toString();
                 String Contrasena = et_Contrasena.getText().toString();
-                if(!Correo.isEmpty() && !Contrasena.isEmpty()) {
+                if(!Correo.isEmpty() || !Contrasena.isEmpty()) {
                     if (Correo.equals("bibliotecario1@unc.edu.pe") && Contrasena.equals("bibliotecario")) {
                         //Inicio de sesión de Bibliotecario
-                        Context context = v.getContext();
-                        Intent intent = new Intent(context, BienvenidoBibliotecarioActivity.class);
+                        Intent intent = new Intent(IniciarSesion.this, BienvenidoBibliotecarioActivity.class);
                         startActivity(intent);
                     } else {
                         //Inicio de sesión de Estudiante

@@ -62,15 +62,13 @@ public class VMEstudiante {
         BDPrestamoOpenHelper bdEstudiantesOpenHelper = new BDPrestamoOpenHelper(oActivity, nombreBD, null, version);
         SQLiteDatabase oBD = bdEstudiantesOpenHelper.getReadableDatabase();
         boolean existeEstudiante = false;
-
         if (oBD != null) {
             String[] args = new String[]{correo, contrasena};
-            Cursor c = oBD.rawQuery("SELECT * FROM Estudiante WHERE Correo=? AND Contraseña=?", args);
-
-            if (c.moveToFirst()) {
+            Cursor cursor = oBD.rawQuery("SELECT * FROM Estudiante WHERE Correo=? AND Contraseña=?", args);
+            if (cursor.moveToFirst()) {
                 existeEstudiante = true;
             }
-            c.close();
+            cursor.close();
             oBD.close();
         }
         return existeEstudiante;
