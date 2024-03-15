@@ -33,11 +33,8 @@ public class VMLibro {
 
         try {
             oBD = openHelper.getWritableDatabase();
-
             if (oBD != null) {
-
                 ContentValues oRegistro = new ContentValues();
-
                 oRegistro.put("titulo", libro.getTitulo());
                 oRegistro.put("autor", libro.getAutor());
                 oRegistro.put("editorial", libro.getEditorial());
@@ -47,11 +44,8 @@ public class VMLibro {
                 oRegistro.put("fotoLibro", libro.getImgLibro());
                 oRegistro.put("cantidadDisponible", libro.getCantidadDisponible());
                 oRegistro.put("stock", libro.getStock());
-
                 long fila = oBD.insert("Libro", null, oRegistro);
                 Log.d("valor de fila", String.valueOf(fila));
-
-
                 if (fila > 0) {
                     rpta = true;
                 }
@@ -89,6 +83,28 @@ public class VMLibro {
                 listaLibros.add(libro);
             }while (oRegistros.moveToNext());
             oBD.close();
+        }
+        return rpta;
+    }
+    public boolean ModificarLibro(Activity oActivity, Libro oLibro, int id) {
+        boolean rpta = false;
+        BDPrestamoOpenHelper bdPrestamoOpenHelper = new BDPrestamoOpenHelper(oActivity, nombreBD, null, version);
+        SQLiteDatabase oBD = bdPrestamoOpenHelper.getWritableDatabase();
+        if (oBD != null) {
+            ContentValues registro = new ContentValues();
+            registro.put("titulo", oLibro.getTitulo());
+            registro.put("autor", oLibro.getAutor());
+            registro.put("editorial", oLibro.getEditorial());
+            registro.put("genero", oLibro.getGenero());
+            registro.put("idioma", oLibro.getIdioma());
+            registro.put("FechaDePublicación", oLibro.getFechaPublicacion());
+            registro.put("fotoLibro", oLibro.getImgLibro());
+            registro.put("cantidadDisponible", oLibro.getCantidadDisponible());
+            registro.put("stock", oLibro.getStock());
+            int filas = (int) oBD.update("Libro", registro, "id = ?", new String[]{String.valueOf(id)});
+            oBD.close();
+            if (filas > 0)
+                rpta = true;
         }
         return rpta;
     }

@@ -25,10 +25,10 @@
             android:name=".ModificarLibro1_2_Activity"
             android:exported="false" />
         <activity
-            android:name=".ModificarLibro1_1_Activity"
+            android:name=".ListarLibrosActivity"
             android:exported="false" />
         <activity
-            android:name=".ListarLibrosActivity"
+            android:name=".ModificarLibro1_1_Activity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
