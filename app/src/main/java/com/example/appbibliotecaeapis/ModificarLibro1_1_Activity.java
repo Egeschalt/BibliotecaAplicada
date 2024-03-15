@@ -12,9 +12,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import androidx.appcompat.widget.SearchView;
-import android.widget.Toast;
 
+import android.widget.Toast;
+import androidx.appcompat.widget.SearchView;
 import java.util.ArrayList;
 
 import Model.Libro;
@@ -22,7 +22,10 @@ import VistaModelo.VMLibro;
 
 public class ModificarLibro1_1_Activity extends AppCompatActivity {
     ListView lvlibros;
+    SearchView buscarAutor;
     SearchView buscar;
+
+
 
     VMLibro vmLibro = new VMLibro();
 
@@ -31,6 +34,7 @@ public class ModificarLibro1_1_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_modificar_libro11);
         buscar = findViewById(R.id.searchv_modificarLibroP1);
+        buscarAutor = findViewById(R.id.searchv_autor);
         lvlibros = findViewById(R.id.lv_modificarLibroP1);
         vmLibro.CargarLibros(this);
 
@@ -39,6 +43,27 @@ public class ModificarLibro1_1_Activity extends AppCompatActivity {
         ArrayAdapter<Libro> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listaLibros);
         lvlibros.setAdapter(adapter);
         registerForContextMenu(lvlibros);
+        buscarAutor.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                Libro libroBuscado = vmLibro.BuscarAutor(ModificarLibro1_1_Activity.this, query); // Busca por título en lugar de por ID
+                if (libroBuscado != null) {
+                    listaLibros.clear();
+                    listaLibros.add(libroBuscado);
+                    adapter.notifyDataSetChanged();
+                } else {
+                    Toast.makeText(ModificarLibro1_1_Activity.this, "No se encontró el libro con el título proporcionado", Toast.LENGTH_SHORT).show();
+                }
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                // No es necesario manejar los cambios de texto aquí
+                return false;
+            }
+        });
+
 
         buscar.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -59,6 +84,8 @@ public class ModificarLibro1_1_Activity extends AppCompatActivity {
                 return false;
             }
         });
+
+
     }
 
     @Override
