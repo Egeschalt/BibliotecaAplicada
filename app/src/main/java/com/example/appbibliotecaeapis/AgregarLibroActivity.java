@@ -4,6 +4,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteConstraintException;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -38,7 +39,6 @@ public class AgregarLibroActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agregar_libro);
 
-
         ettitulo= findViewById(R.id.et_tituloAgregar);
         etautor= findViewById(R.id.et_autorAgregar);
         eteditorial= findViewById(R.id.et_editorialAgregar);
@@ -56,42 +56,35 @@ public class AgregarLibroActivity extends AppCompatActivity {
         btnagregar.setOnClickListener(v -> {
             agregarLibro();
 
-
         });
-
-
-
-
-
 
     }
     private void agregarLibro() {
-
-
+        try {
         String titulo =ettitulo.getText().toString();
         String autor =etautor.getText().toString();
         String editorial =eteditorial.getText().toString();
         String genero =etgenero.getText().toString();
         String idioma =etidioma.getText().toString();
         int stock = Integer.valueOf(etstock.getText().toString());
-
-
-
         long fechaMillis = cvfecha.getDate();
         Date fechaPublicacion = new Date(fechaMillis);
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault());
-            String fechaFormateada = sdf.format(fechaPublicacion);
-
-
-
-
+        String fechaFormateada = sdf.format(fechaPublicacion);
         Libro olibro = new Libro(titulo,autor,editorial,genero,idioma, fechaFormateada,imagen,stock,stock);
         vmLibro = new VMLibro();
         if(vmLibro.AgregarLibro(this,olibro)){
             Toast.makeText(this,"Libro Agregado Correctamente",Toast.LENGTH_SHORT).show();
+            Intent oIntent = new Intent(AgregarLibroActivity.this, BienvenidoBibliotecarioActivity.class);
+            startActivity(oIntent);
         }
         else {
             Toast.makeText(this,"No Se agrego  el Libro",Toast.LENGTH_SHORT).show();
+        }
+        } catch (SQLiteConstraintException e) {
+            // Maneja la excepción cuando se viola la restricción de unicidad
+            Toast.makeText(this, "El título del libro ya existe en la base de datos", Toast.LENGTH_SHORT).show();
+            // Aquí puedes realizar alguna acción adicional, como solicitar un nuevo título al usuario
         }
     }
 
@@ -103,18 +96,20 @@ public class AgregarLibroActivity extends AppCompatActivity {
     @ Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(resultCode==RESULT_OK && requestCode == 1){
+        if(resultCode == RESULT_OK && requestCode == 1 && data != null){
 
             ivlibro.setImageURI(data.getData());
             ivlibro.buildDrawingCache();
-            // convierte la imagen a Bitmap
-            Bitmap imagenBitMap=ivlibro.getDrawingCache();
-            ByteArrayOutputStream flujoSalida=new ByteArrayOutputStream();
-            imagenBitMap.compress(Bitmap.CompressFormat.PNG,0,flujoSalida);
-            imagen=flujoSalida.toByteArray();
-//
+            // Convierte la imagen a Bitmap
+            Bitmap imagenBitMap = ivlibro.getDrawingCache();
+            ByteArrayOutputStream flujoSalida = new ByteArrayOutputStream();
+            // Comprime el Bitmap a formato PNG
+            imagenBitMap.compress(Bitmap.CompressFormat.PNG, 100, flujoSalida);
+            // Convierte ByteArrayOutputStream a un arreglo de bytes
+            imagen = flujoSalida.toByteArray();
         }
     }
+
     public Bitmap decodificarByteBitMap(byte[] imagen){
         return BitmapFactory.decodeByteArray(imagen,0,imagen.length);
     }

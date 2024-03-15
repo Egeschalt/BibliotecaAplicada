@@ -8,7 +8,7 @@ import android.widget.ImageButton;
 
 public class BienvenidoBibliotecarioActivity extends AppCompatActivity {
 
-    ImageButton ibgagregar,ibgmodificar,ibgeliminar,ibglistar;
+    ImageButton ibgagregar,ibgmodificar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,9 +17,6 @@ public class BienvenidoBibliotecarioActivity extends AppCompatActivity {
 
         ibgagregar = findViewById(R.id.imButton_agregarLibro);
         ibgmodificar = findViewById(R.id.imButton_ModificarLibro);
-        ibgeliminar = findViewById(R.id.imButton_eliminarLibro);
-        ibglistar = findViewById(R.id.imButton_listarLibros);
-
 
         ibgagregar.setOnClickListener(v -> {
             llevarAgregar();
@@ -27,22 +24,11 @@ public class BienvenidoBibliotecarioActivity extends AppCompatActivity {
         ibgmodificar.setOnClickListener(v -> {
             llevarModificar();
         });
-        ibglistar.setOnClickListener(v -> {
-            llevarListar();
-        });
-        ibgeliminar.setOnClickListener(v -> {
-            llevaEliminar();
-        });
-
-    }
-
-    private void llevaEliminar() {
-    }
-
-    private void llevarListar() {
     }
 
     private void llevarModificar() {
+        Intent oIntent = new Intent(BienvenidoBibliotecarioActivity.this, ModificarLibro1_1_Activity.class);
+        startActivity(oIntent);
     }
 
     private void llevarAgregar() {

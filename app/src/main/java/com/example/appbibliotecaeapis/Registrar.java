@@ -1,6 +1,8 @@
 package com.example.appbibliotecaeapis;
 
+
 import androidx.appcompat.app.AppCompatActivity;
+
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,18 +15,22 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 import Model.Estudiante;
 import VistaModelo.VMEstudiante;
 
+
 public class Registrar extends AppCompatActivity {
 
-        VMEstudiante vmEstudiante;
-        EditText et_Correo, et_Contrasena, et_Celular, et_Nombre, et_Apellido, et_Dni, et_Codigo;
-        ImageButton btn_Registro;
-        TextView tv_IniciaSesion;
-        Spinner sp_Carrera;
 
-        String[] Carrera = {"Ingeniería de sistemas","Medicina","Ingeniería civil","Ingeniería de Minas"};
+    VMEstudiante vmEstudiante;
+    EditText et_Correo, et_Contrasena, et_Celular, et_Nombre, et_Apellido, et_Dni, et_Codigo;
+    ImageButton btn_Registro;
+    TextView tv_IniciaSesion;
+    Spinner sp_Carrera;
+
+
+    String[] Carrera = {"Ingeniería de sistemas","Medicina","Ingeniería civil","Ingeniería de Minas"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,10 +47,11 @@ public class Registrar extends AppCompatActivity {
         et_Codigo = findViewById(R.id.et_codEstudiante);
         sp_Carrera = findViewById(R.id.sp_carreras);
 
+
         sp_Carrera.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, Carrera));
         tv_IniciaSesion.setOnClickListener(new View.OnClickListener() {
             @Override
-           public void onClick(View v) {
+            public void onClick(View v) {
                 PantallaSesion();
             }
         });
@@ -65,14 +72,14 @@ public class Registrar extends AppCompatActivity {
         String Correo = et_Correo.getText().toString();
         String Contrasena= et_Contrasena.getText().toString();
 
+
         if(!Codigo.isEmpty() && !Nombre.isEmpty() && !Apellido.isEmpty() && !Dni.isEmpty() &&
                 !Carrera.isEmpty() && !Correo.isEmpty() && !Contrasena.isEmpty() && !Celular.isEmpty()){
             if(Correo.endsWith("unc.edu.pe")){
                 if (Dni.matches("[0-9]{8}")) {
                     if (Codigo.matches("[0-9]{10}")) {
                         Estudiante estudiante = new Estudiante(Codigo,Nombre,Apellido,Dni,Carrera,Correo,Contrasena,Celular);
-                        vmEstudiante=new VMEstudiante(this);
-                        if (vmEstudiante.AgregarEstudiante(this,estudiante)) {
+                        if (vmEstudiante.AgregarEstudiante(estudiante)) {
                             Toast.makeText(this, "Agregado Correctamente", Toast.LENGTH_SHORT).show();
                             PantallaSesion();
                         }
@@ -96,3 +103,6 @@ public class Registrar extends AppCompatActivity {
         finish();
     }
 }
+
+
+

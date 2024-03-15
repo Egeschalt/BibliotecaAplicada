@@ -1,5 +1,7 @@
 package com.example.appbibliotecaeapis;
 
+
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -12,63 +14,83 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import Model.Libro;
 
+
 import VistaModelo.VMLibro;
+
+
 
 
 public class LibroAdapter extends RecyclerView.Adapter<LibroAdapter.ViewHolder> {
     Context context;
     VMLibro vmLibro;
     private static LayoutInflater inflater = null;
+    OnLibroClickListener onLibroClickListener;
+
+
     public LibroAdapter(Context context, VMLibro vmLibro) {
         this.context = context;
         this.vmLibro = vmLibro;
         inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
-    OnLibroClickListener onLibroClickListener;
-    public interface OnLibroClickListener{
-        void onLibroClick(Libro libro);
+
+
+    public interface OnLibroClickListener {
+        void onLibroClick(int position, Libro libro);
     }
 
-    public void setOnLibroClickListener(OnLibroClickListener onLibroClickListener){
+
+    public void setOnLibroClickListener(OnLibroClickListener onLibroClickListener) {
         this.onLibroClickListener = onLibroClickListener;
     }
 
+
     @NonNull
     @Override
-    //Cual va a ser el contenedor de datos, será el layout que hemos creado
-    public LibroAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.item_libro, parent, false);
         return new ViewHolder(view);
     }
 
+
     @Override
-    public void onBindViewHolder(@NonNull LibroAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         Libro libro = vmLibro.obtenerLibro(position);
+
 
         holder.tvTitulo.setText(libro.getTitulo());
         holder.tvAutor.setText(libro.getAutor());
         holder.tvFecha.setText(libro.getFechaPublicacion());
         holder.tvIdioma.setText(libro.getIdioma());
         holder.ivLibro.setImageBitmap(decodificarByteBitMap(libro.getImgLibro()));
+
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onLibroClickListener.onLibroClick(libro);
+                if (onLibroClickListener != null) {
+                    onLibroClickListener.onLibroClick(position, libro);
+                }
             }
         });
     }
-    //Decodificar una imagen (arreglo de bytes) a bitmap para poder usarlo en la base de datos
-    private Bitmap decodificarByteBitMap(byte[] imagen){
-        return BitmapFactory.decodeByteArray(imagen,0,imagen.length);
+
+
+    private Bitmap decodificarByteBitMap(byte[] imagen) {
+        return BitmapFactory.decodeByteArray(imagen, 0, imagen.length);
     }
+
 
     @Override
     public int getItemCount() {
         return vmLibro.contarLibros();
     }
+
+
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView tvTitulo, tvAutor, tvIdioma, tvFecha;
         ImageView ivLibro;
+
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             tvTitulo = itemView.findViewById(R.id.tv_tituloItem);
@@ -76,6 +98,9 @@ public class LibroAdapter extends RecyclerView.Adapter<LibroAdapter.ViewHolder> 
             tvIdioma = itemView.findViewById(R.id.tv_idiomaItem);
             tvFecha = itemView.findViewById(R.id.tv_fechaPublicaItem);
             ivLibro = itemView.findViewById(R.id.iv_itemlibro);
- }
+        }
+    }
 }
-}
+
+
+

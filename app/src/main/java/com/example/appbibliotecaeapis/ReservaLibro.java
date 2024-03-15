@@ -14,10 +14,13 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import Model.Libro;
+
 import VistaModelo.VMLibro;
+
 
 public class ReservaLibro extends AppCompatActivity {
     public static VMLibro vmLibro = new VMLibro();
+
     RecyclerView rvLibros;
 
     @Override
@@ -37,8 +40,10 @@ public class ReservaLibro extends AppCompatActivity {
             rvLibros.setAdapter(libroAdapter);
             libroAdapter.setOnLibroClickListener(new LibroAdapter.OnLibroClickListener() {
                 @Override
-                public void onLibroClick(Libro libro) {
+                public void onLibroClick(int position, Libro libro) {
+                    Libro libroSeleccionado = vmLibro.obtenerLibro(position);
                     Intent oIntent = new Intent(ReservaLibro.this, ReservarLibro_2.class);
+                    oIntent.putExtra("idLibroSeleccionado", libroSeleccionado.getIdLibro());
                     oIntent.putExtra("libro", libro);
                     startActivity(oIntent);
                 }
@@ -52,3 +57,4 @@ public class ReservaLibro extends AppCompatActivity {
         rvLibros.addItemDecoration(mDividerItemDecoration);
     }
 }
+

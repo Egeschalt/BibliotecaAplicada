@@ -2,9 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#351F1F">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
 
     <LinearLayout
         android:layout_width="411dp"
@@ -15,40 +15,53 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/iv_itemlibro"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:paddingLeft="24dp"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
-            android:scaleType="fitXY"
-            app:srcCompat="@drawable/rectangle_10" />
 
         <LinearLayout
-            android:layout_width="310dp"
+            android:layout_width="126dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_weight="0"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:id="@+id/iv_itemlibro"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:paddingLeft="24dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/rectangle_10" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
             android:orientation="vertical"
             android:padding="8dp">
 
+
             <TextView
                 android:id="@+id/tv_tituloItem"
-                android:layout_width="match_parent"
+                android:layout_width="264dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/josefin_sans_bold"
                 android:text="[TITULO]"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
 
+
             <TextView
                 android:id="@+id/tv_autorItem"
-                android:layout_width="match_parent"
+                android:layout_width="262dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/josefin_sans_bold"
                 android:text="[AUTOR]"
                 android:textColor="@color/white" />
+
 
             <TextView
                 android:id="@+id/tv_idiomaItem"
@@ -58,6 +71,7 @@
                 android:text="[IDIOMA]"
                 android:textColor="@color/white" />
 
+
             <TextView
                 android:id="@+id/tv_fechaPublicaItem"
                 android:layout_width="match_parent"
@@ -65,6 +79,7 @@
                 android:fontFamily="@font/josefin_sans_bold"
                 android:text="[FECHA DE PUBLICACIÓN]"
                 android:textColor="@color/white" />
+
 
             <TextView
                 android:id="@+id/tv_cantDispItem"
@@ -75,5 +90,6 @@
                 android:textColor="@color/white" />
         </LinearLayout>
     </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -16,25 +16,19 @@ public class VMEstudiante {
     Activity oActivity;
     int version;
 
-    public VMEstudiante(Activity oActivity) {
-        listaEstudiantes=new ArrayList<>();
-        nombreBD="BDBiblioteca";
-        version=1;
-        this.oActivity=oActivity;
+    public VMEstudiante(Activity activity) {
+        listaEstudiantes = new ArrayList<>();
+        nombreBD = "BDBiblioteca";
+        version = 1;
+        oActivity = activity;
         InsertarEstudiantes();
     }
 
-    public void InsertarEstudiantes(){
-      //  Estudiante est1=new Estudiante("01","Maycol","Varas","72346482","Ingeniería de Sistemas","jvaras","a",);
-       // Estudiante est2=new Estudiante("02","Diego");
-//        Estudiante est3=new Estudiante("03","Jhosmer");
-//        Estudiante est4=new Estudiante("04","Hans");
-//        Estudiante est5=new Estudiante("05","Ever");
-//        AgregarEstudiante(est1);
-
-
+    public void InsertarEstudiantes() {
+        // Código para insertar estudiantes en la base de datos
     }
-    public boolean AgregarEstudiante(Activity oActivity,Estudiante estudiante) {
+
+    public boolean AgregarEstudiante(Estudiante estudiante) {
         boolean rpta = false;
         BDPrestamoOpenHelper bdEstudiantesOpenHelper = new BDPrestamoOpenHelper(oActivity, nombreBD, null, version);
         SQLiteDatabase oBD = bdEstudiantesOpenHelper.getWritableDatabase();
@@ -42,21 +36,25 @@ public class VMEstudiante {
             ContentValues oRegistro = new ContentValues();
             oRegistro.put("IdEstudiante", estudiante.getCodEstudiante());
             oRegistro.put("Nombre", estudiante.getNombre());
-            oRegistro.put("Apellido", estudiante.getApellidos());
-            oRegistro.put("Dni", estudiante.getCarrera());
-            oRegistro.put("Carrera", estudiante.getCorreo());
-            oRegistro.put("Correo", estudiante.getContrasena());
+            oRegistro.put("Apellidos", estudiante.getApellidos());
+            oRegistro.put("Dni", estudiante.getDni());
+            oRegistro.put("Carrera", estudiante.getCarrera());
+            oRegistro.put("Correo", estudiante.getCorreo());
+            oRegistro.put("Contraseña", estudiante.getContrasena());
             oRegistro.put("Telefono", estudiante.getTelefono());
-            oRegistro.put("fotoEstudiante", estudiante.getFoto());
+            oRegistro.put("fotoEstudiante", estudiante.getFotoEstudiante());
             long fila = oBD.insert("Estudiante", null, oRegistro);
             Log.d("valor de fila", String.valueOf(fila));
-            if (fila > 1) {
+            listaEstudiantes.add(estudiante);
+            if (fila > 0) {
+                listaEstudiantes.add(estudiante);
                 rpta = true;
-                oBD.close();
             }
+            oBD.close();
         }
         return rpta;
     }
+
     public boolean verificarEstudiante(String correo, String contrasena) {
         BDPrestamoOpenHelper bdEstudiantesOpenHelper = new BDPrestamoOpenHelper(oActivity, nombreBD, null, version);
         SQLiteDatabase oBD = bdEstudiantesOpenHelper.getReadableDatabase();
@@ -64,7 +62,7 @@ public class VMEstudiante {
 
         if (oBD != null) {
             String[] args = new String[]{correo, contrasena};
-            Cursor c = oBD.rawQuery("SELECT * FROM Estudiante WHERE correoEstudiante=? AND contrasenaEstudiante=?", args);
+            Cursor c = oBD.rawQuery("SELECT * FROM Estudiante WHERE Correo=? AND Contraseña=?", args);
 
             if (c.moveToFirst()) {
                 existeEstudiante = true;
@@ -73,5 +71,14 @@ public class VMEstudiante {
             oBD.close();
         }
         return existeEstudiante;
+    }
+
+    public String obtenerCodEstudiante(int indice) {
+        if (indice >= 0 && indice < listaEstudiantes.size()) {
+            Estudiante estudiante = listaEstudiantes.get(indice);
+            return estudiante.getCodEstudiante();
+        } else {
+            return ""; // Retorna una cadena vacía si el índice está fuera de rango
+        }
     }
 }

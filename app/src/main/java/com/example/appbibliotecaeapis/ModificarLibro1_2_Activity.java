@@ -1,11 +1,13 @@
 package com.example.appbibliotecaeapis;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Button;
@@ -32,7 +34,7 @@ public class ModificarLibro1_2_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_modificar_libro12);
 
         ettitulo = findViewById(R.id.et_tituloModificarP2);
-        etautor = findViewById(R.id.et_autorModificarP2);
+        etautor = findViewById(R.id.et_et_autorModificarP2);
         eteditorial = findViewById(R.id.et_editorialModificarP2);
         etgenero = findViewById(R.id.et_generoModificarP2);
         etidioma = findViewById(R.id.et_idiomaModificarP2);
@@ -40,7 +42,9 @@ public class ModificarLibro1_2_Activity extends AppCompatActivity {
         ivlibro = findViewById(R.id.img_mostrarImagenModificarP2);
         btnmodificar = findViewById(R.id.btn_modificarP2);
         btnmodificar.setOnClickListener(view -> modificarLibro());
-
+        ivlibro.setOnClickListener(v -> {
+            cargarImagen();
+        });
         Bundle datos = getIntent().getExtras();
         if (datos != null) {
             if (datos.containsKey("libroSeleccionado")) {
@@ -52,6 +56,7 @@ public class ModificarLibro1_2_Activity extends AppCompatActivity {
                     eteditorial.setText(oLibro.getEditorial());
                     etgenero.setText(oLibro.getGenero());
                     etidioma.setText(oLibro.getIdioma());
+                    etstock.setText(String.valueOf(oLibro.getStock())); // Convertir el stock a String
                     ivlibro.setImageBitmap(decodificarByteBitMap(oLibro.getImgLibro()));
                 } else {
                     Log.d("ModificarLibro1_2", "El objeto Libro es nulo");
@@ -76,6 +81,7 @@ public class ModificarLibro1_2_Activity extends AppCompatActivity {
         String editorial = eteditorial.getText().toString();
         String genero = etgenero.getText().toString();
         String idioma = etidioma.getText().toString();
+
         int idLibro = ointent.getIntExtra("idLibroSeleccionado", -1);
 
         // Verificar si el campo de stock es numérico antes de intentar convertirlo
@@ -114,5 +120,28 @@ public class ModificarLibro1_2_Activity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "No se pudo modificar el libro", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    @ Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode == RESULT_OK && requestCode == 1 && data != null){
+
+            ivlibro.setImageURI(data.getData());
+            ivlibro.buildDrawingCache();
+            // Convierte la imagen a Bitmap
+            Bitmap imagenBitMap = ivlibro.getDrawingCache();
+            ByteArrayOutputStream flujoSalida = new ByteArrayOutputStream();
+            // Comprime el Bitmap a formato PNG
+            imagenBitMap.compress(Bitmap.CompressFormat.PNG, 100, flujoSalida);
+            // Convierte ByteArrayOutputStream a un arreglo de bytes
+            imagen = flujoSalida.toByteArray();
+        }
+    }
+
+    private void cargarImagen() {
+        Intent oIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        oIntent.setType("image/*");
+        startActivityIfNeeded(Intent.createChooser(oIntent,"Selecionar la Aplicacion"),1);
     }
 }

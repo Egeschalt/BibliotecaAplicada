@@ -10,4 +10,12 @@
         android:title="Modificar"
         app:showAsAction="ifRoom" />
 
+    <item
+        android:id="@+id/im_Eliminar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/baseline_delete_forever_24"
+        android:title="Eliminar"
+        app:showAsAction="ifRoom" />
+
 </menu>

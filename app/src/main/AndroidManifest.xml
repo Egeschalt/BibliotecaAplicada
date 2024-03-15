@@ -16,7 +16,7 @@
             android:name=".ReservarLibro_2"
             android:exported="false" />
         <activity
-            android:name=".ModificarLibro1_1_Activity"
+            android:name=".MainActivity"
             android:exported="true">
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
@@ -40,7 +40,7 @@
 
         </activity>
         <activity
-            android:name=".BienvenidoBibliotecarioActivity"
+            android:name=".ModificarLibro1_1_Activity"
             android:exported="false" />
         <activity
             android:name=".DevolverLibro"
@@ -64,7 +64,7 @@
             android:name=".IniciarSesion"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".BienvenidoBibliotecarioActivity"
             android:exported="false">
         </activity>
 

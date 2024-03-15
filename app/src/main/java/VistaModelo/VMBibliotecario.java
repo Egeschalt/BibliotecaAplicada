@@ -2,6 +2,7 @@ package VistaModelo;
 
 import android.app.Activity;
 import android.content.ContentValues;
+import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
@@ -10,27 +11,32 @@ import java.util.ArrayList;
 import Model.Bibliotecario;
 
 public class VMBibliotecario {
+    Context context; // Variable para almacenar el contexto
+
     ArrayList<Bibliotecario> listaBibliotecarios;
     String nombreBD;
     Activity oActivity;
     int version;
 
-    public VMBibliotecario(Activity oActivity) {
-        listaBibliotecarios=new ArrayList<>();
-        nombreBD="BDBiblioteca";
-        version=1;
-        this.oActivity=oActivity;
+    public VMBibliotecario(Context context) {
+        this.context = context;
+        listaBibliotecarios = new ArrayList<>();
+        nombreBD = "BDBiblioteca";
+        version = 1;
         InsertarBibliotecario();
     }
 
     private void InsertarBibliotecario(){
 
-      Bibliotecario bibliotecario1=new Bibliotecario("1","Juan","Pérez","945123100","bibliotecario1@unc.edu.pe","bibliotecario");
-        AgregarBibliotecario(bibliotecario1);
+        Bibliotecario bibliotecario1=new Bibliotecario("Juan","Pérez","945123100","bibliotecario1@unc.edu.pe","bibliotecario");
+        if (AgregarBibliotecario(bibliotecario1)) {
+            listaBibliotecarios.add(bibliotecario1);
+        }
     }
+
     private boolean AgregarBibliotecario(Bibliotecario bibliotecario) {
         boolean rpta = false;
-        BDPrestamoOpenHelper bdBibliotecarioOpenHelper = new BDPrestamoOpenHelper(oActivity, nombreBD, null, version);
+        BDPrestamoOpenHelper bdBibliotecarioOpenHelper = new BDPrestamoOpenHelper(context, nombreBD, null, version); // Corrección aquí
         SQLiteDatabase oBD = bdBibliotecarioOpenHelper.getWritableDatabase();
         if (oBD != null) {
             ContentValues oRegistro = new ContentValues();
@@ -50,5 +56,12 @@ public class VMBibliotecario {
             }
         }
         return rpta;
+    }
+    public int obtenerIdBibliotecario() {
+        if (!listaBibliotecarios.isEmpty()) {
+            return listaBibliotecarios.get(0).getIdBibliotecario();
+        } else {
+            return 0;
+        }
     }
 }

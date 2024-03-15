@@ -1,8 +1,8 @@
 package VistaModelo;
+
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
 import androidx.annotation.Nullable;
 
 public class BDPrestamoOpenHelper extends SQLiteOpenHelper {
@@ -19,11 +19,12 @@ public class BDPrestamoOpenHelper extends SQLiteOpenHelper {
 
     String tabla_bibliotecario = "CREATE TABLE Bibliotecario(" +
             "IdBibliotecario INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
-            "Nombre VARCHAR(40) NOT NULL UNIQUE," +
-            "Apellidos VARCHAR(40) NOT NULL," +
-            "Telefono VARCHAR(9) NOT NULL," +
+            "nombreBibliotecario VARCHAR(40) NOT NULL UNIQUE," +
+            "apellidosBibliotecario VARCHAR(40) NOT NULL," +
+            "telefonoBibliotecario VARCHAR(9) NOT NULL," +
+            "correoBibliotecario VARCHAR(40) NOT NULL," +
+            "contasenaBibliotecario VARCHAR(40) NOT NULL," +
             "fotoBibliotecario BYTE)";
-
     String tabla_libro = "CREATE TABLE Libro(" +
             "IdLibro INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
             "titulo VARCHAR(40) NOT NULL UNIQUE," +
@@ -50,9 +51,11 @@ public class BDPrestamoOpenHelper extends SQLiteOpenHelper {
             "FOREIGN KEY(IdBibliotecario) REFERENCES Bibliotecario(IdBibliotecario)" +
             ");";
 
+
     public BDPrestamoOpenHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
+
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(tabla_estudiante);
@@ -73,6 +76,5 @@ public class BDPrestamoOpenHelper extends SQLiteOpenHelper {
 
     private void enableForeignKeys(SQLiteDatabase db) {
         db.execSQL("PRAGMA foreign_keys=ON");
-        System.out.println("PRAGMA maybe ok");
     }
 }
