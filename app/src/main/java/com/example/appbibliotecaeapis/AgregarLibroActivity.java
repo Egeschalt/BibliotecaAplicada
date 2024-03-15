@@ -73,8 +73,8 @@ public class AgregarLibroActivity extends AppCompatActivity {
         String editorial =eteditorial.getText().toString();
         String genero =etgenero.getText().toString();
         String idioma =etidioma.getText().toString();
-
         int stock = Integer.valueOf(etstock.getText().toString());
+
 
 
         long fechaMillis = cvfecha.getDate();
@@ -118,8 +118,4 @@ public class AgregarLibroActivity extends AppCompatActivity {
     public Bitmap decodificarByteBitMap(byte[] imagen){
         return BitmapFactory.decodeByteArray(imagen,0,imagen.length);
     }
-
-
-
-
 }

@@ -16,25 +16,28 @@
             android:name=".ReservarLibro_2"
             android:exported="false" />
         <activity
-            android:name=".AgregarLibroActivity"
-            android:exported="false" />
+            android:name=".ModificarLibro1_1_Activity"
+            android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
         <activity
             android:name=".EliminarLibroActivity"
             android:exported="false" />
         <activity
             android:name=".ModificarLibro1_2_Activity"
-            android:exported="false" />
+            android:exported="false"/>
         <activity
             android:name=".ListarLibrosActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ModificarLibro1_1_Activity"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="false"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <activity
+            android:name=".AgregarLibroActivity"
+            android:exported="false" >
+
         </activity>
         <activity
             android:name=".BienvenidoBibliotecarioActivity"

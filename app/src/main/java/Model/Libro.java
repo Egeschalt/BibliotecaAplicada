@@ -6,18 +6,18 @@ import android.os.Parcelable;
 
 import androidx.annotation.NonNull;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Libro implements Parcelable {
+public class Libro implements Serializable {
 
-    int IdLibro;
+    int idLibro;
     String titulo;
     String autor;
     String editorial;
     String genero;
     String idioma;
     String fechaPublicacion;
-
     byte[] imgLibro;
     int cantidadDisponible;
 
@@ -26,7 +26,7 @@ public class Libro implements Parcelable {
 
     }
     public Libro(int idLibro, String titulo, String autor, String editorial, String genero, String idioma, String fechaPublicacion, byte[] imgLibro, int cantidadDisponible, int stock) {
-        IdLibro = idLibro;
+        this.idLibro = idLibro;
         this.titulo = titulo;
         this.autor = autor;
         this.editorial = editorial;
@@ -39,7 +39,7 @@ public class Libro implements Parcelable {
     }
 
     protected Libro(Parcel in) {
-        IdLibro = in.readInt();
+        this.idLibro = in.readInt();
         titulo = in.readString();
         autor = in.readString();
         editorial = in.readString();
@@ -53,9 +53,8 @@ public class Libro implements Parcelable {
         Stock = in.readInt();
     }
 
-    @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(IdLibro);
+        dest.writeInt(idLibro);
         dest.writeString(titulo);
         dest.writeString(autor);
         dest.writeString(editorial);
@@ -69,7 +68,7 @@ public class Libro implements Parcelable {
         dest.writeInt(Stock);
     }
 
-    public static final Creator<Libro> CREATOR = new Creator<Libro>() {
+    public static final Parcelable.Creator<Libro> CREATOR = new Parcelable.Creator<Libro>() {
         @Override
         public Libro createFromParcel(Parcel in) {
             return new Libro(in);
@@ -82,7 +81,7 @@ public class Libro implements Parcelable {
     };
 
     public int getIdLibro() {
-        return IdLibro;
+        return idLibro;
     }
 
     public Libro(String titulo, String autor, String editorial, String genero, String idioma, String fechaPublicacion, byte[] imgLibro, int cantidadDisponible, int stock) {
@@ -96,8 +95,6 @@ public class Libro implements Parcelable {
         this.cantidadDisponible=cantidadDisponible;
         this.Stock=stock;
     }
-
-
 
     public String getTitulo() {
         return titulo;
@@ -147,10 +144,6 @@ public class Libro implements Parcelable {
         this.fechaPublicacion = fechaPublicacion;
     }
 
-
-
-
-
     public byte[] getImgLibro() {
         return imgLibro;
     }
@@ -175,11 +168,9 @@ public class Libro implements Parcelable {
         Stock = stock;
     }
 
-    @Override
     public int describeContents() {
         return 0;
     }
-
 
     @Override
     public String toString() {

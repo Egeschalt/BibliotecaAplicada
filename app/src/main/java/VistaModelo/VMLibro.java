@@ -5,7 +5,6 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
-
 import java.util.ArrayList;
 
 import Model.Libro;
@@ -19,7 +18,6 @@ public class VMLibro {
         this.listaLibros =new ArrayList<Libro>();
         nombreBD="BDBiblioteca";
         version=1;
-
     }
 
     private void InsertarLibrosCargados() {
@@ -60,6 +58,7 @@ public class VMLibro {
 
         return rpta;
     }
+
     public boolean CargarLibros(Activity oActivity){
         boolean rpta=false;
         listaLibros.clear();
@@ -70,6 +69,7 @@ public class VMLibro {
         if (oRegistros.moveToFirst()){
             rpta=true;
             do{
+                int id = oRegistros.getInt(0); // Suponiendo que el ID es el primer campo en tu tabla de libros
                 String Titulo=oRegistros.getString(1);
                 String Autor = oRegistros.getString(2);
                 String Editorial = oRegistros.getString(3);
@@ -79,13 +79,15 @@ public class VMLibro {
                 byte[] Imagen= oRegistros.getBlob(7);
                 int CantidadDisponible=oRegistros.getInt(8);
                 int Stock=oRegistros.getInt(9);
-                Libro libro = new Libro(Titulo,Autor,Editorial,Genero,Idioma,FechaPublicacion,Imagen,CantidadDisponible,Stock);
+                Libro libro = new Libro(id, Titulo, Autor, Editorial, Genero, Idioma, FechaPublicacion, Imagen, CantidadDisponible, Stock);
                 listaLibros.add(libro);
             }while (oRegistros.moveToNext());
             oBD.close();
         }
+
         return rpta;
     }
+
     public boolean ModificarLibro(Activity oActivity, Libro oLibro, int id) {
         boolean rpta = false;
         BDPrestamoOpenHelper bdPrestamoOpenHelper = new BDPrestamoOpenHelper(oActivity, nombreBD, null, version);
@@ -101,7 +103,9 @@ public class VMLibro {
             registro.put("fotoLibro", oLibro.getImgLibro());
             registro.put("cantidadDisponible", oLibro.getCantidadDisponible());
             registro.put("stock", oLibro.getStock());
-            int filas = (int) oBD.update("Libro", registro, "id = ?", new String[]{String.valueOf(id)});
+
+            // Corrige la sentencia SQL para usar el nombre correcto de la columna en la cláusula WHERE
+            int filas = (int) oBD.update("Libro", registro, "IdLibro = ?", new String[]{String.valueOf(id)});
             oBD.close();
             if (filas > 0)
                 rpta = true;
@@ -129,6 +133,7 @@ public class VMLibro {
         }
         return oLibro;
     }
+
     public ArrayList<Libro> listarLibro(){
         return listaLibros;
     }
@@ -137,8 +142,12 @@ public class VMLibro {
         return listaLibros.size();
     }
 
-    public Libro obtenerLibro(int indice){
-        return listaLibros.get(indice);
-}
+    public Libro obtenerLibro(int indice) {
+        if (indice >= 0 && indice < listaLibros.size()) {
+            return listaLibros.get(indice);
+        } else {
+            return null; // O puedes manejar este caso de otra manera, como lanzar una excepción
+        }
+    }
 
 }
